@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atlanta Women in AI - Amplifying women's voices in artificial intelligence through community, leadership, and empowerment">
+    <title>Atlanta Women in AI - Empowering Women in Artificial Intelligence</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Atlanta Women in AI" class="logo-img">
+                <span class="logo-text">Atlanta Women in AI</span>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#why-join" class="nav-link">Why Join</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#testimonials" class="nav-link">Stories</a>
+                <a href="#join" class="nav-link nav-cta">Join Us</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-progress" id="navProgress"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="gradient-mesh"></div>
+            <canvas id="particleCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Amplifying</span>
+                <span class="title-line gradient-text">Women's Voices</span>
+                <span class="title-line">in AI</span>
+            </h1>
+            <p class="hero-subtitle">
+                Join Atlanta's premier community of women leading the AI revolution through 
+                <span class="highlight">respect</span>, 
+                <span class="highlight">empowerment</span>, and 
+                <span class="highlight">leadership</span>.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#join" class="btn btn-primary btn-glow">Join Our Community</a>
+                <a href="#events" class="btn btn-secondary">Next Event →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="130">0</span>
+                    <span class="stat-label">LinkedIn Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="80">0</span>
+                    <span class="stat-label">Active Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">WhatsApp Community</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Who We Are</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Atlanta Women in AI is a vibrant community of tech professionals, consultants, and marketers united by a shared vision: to amplify women's voices in artificial intelligence.
+                    </p>
+                    <div class="mission-box glassmorphism">
+                        <h3>Our Mission</h3>
+                        <p>To create a supportive ecosystem where women in AI can connect, learn, and lead. We foster professional growth through knowledge sharing, mentorship, and collaborative innovation.</p>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">🤝</div>
+                            <h4>Community</h4>
+                            <p>Building meaningful connections</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">📈</div>
+                            <h4>Growth</h4>
+                            <p>Advancing careers together</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">🧠</div>
+                            <h4>Innovation</h4>
+                            <p>Shaping the future of AI</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="floating-cards">
+                        <div class="float-card card-1">AI</div>
+                        <div class="float-card card-2">ML</div>
+                        <div class="float-card card-3">Data</div>
+                        <div class="float-card card-4">Tech</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section id="why-join" class="why-join">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Join Us</h2>
+                <p class="section-subtitle">Discover the benefits of being part of our thriving community</p>
+            </div>
+            <div class="initiatives-grid">
+                <div class="initiative-card" data-category="networking">
+                    <div class="card-inner">
+                        <div class="card-front glassmorphism">
+                            <div class="card-icon">🤝</div>
+                            <h3>Monthly Meetings</h3>
+                            <p>Connect in-person every 3rd Wednesday</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+                        <div class="card-back glassmorphism">
+                            <h3>Monthly Meetings</h3>
+                            <ul>
+                                <li>📍 Alpharetta location</li>
+                                <li>🕐 Noon - 1:30pm</li>
+                                <li>🍽️ Lunch included ($10)</li>
+                                <li>📚 Expert speakers & workshops</li>
+                            </ul>
+                            <button class="btn btn-small">Register Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="initiative-card" data-category="learning">
+                    <div class="card-inner">
+                        <div class="card-front glassmorphism">
+                            <div class="card-icon">🎓</div>
+                            <h3>Masterclasses</h3>
+                            <p>Feature your AI expertise</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+                        <div class="card-back glassmorphism">
+                            <h3>Masterclass Program</h3>
+                            <ul>
+                                <li>🌟 Showcase your courses</li>
+                                <li>📢 Reach our community</li>
+                                <li>🤝 Referral opportunities</li>
+                                <li>💡 Knowledge sharing</li>
+                            </ul>
+                            <button class="btn btn-small">Submit Class</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="initiative-card" data-category="collaboration">
+                    <div class="card-inner">
+                        <div class="card-front glassmorphism">
+                            <div class="card-icon">🧠</div>
+                            <h3>Think Tank</h3>
+                            <p>Get feedback on your AI projects</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+                        <div class="card-back glassmorphism">
+                            <h3>Think Tank Sessions</h3>
+                            <ul>
+                                <li>💭 30-min brainstorming</li>
+                                <li>🔄 Reciprocal feedback</li>
+                                <li>🚀 Project acceleration</li>
+                                <li>👥 Peer expertise</li>
+                            </ul>
+                            <button class="btn btn-small">Join Session</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="initiative-card" data-category="networking">
+                    <div class="card-inner">
+                        <div class="card-front glassmorphism">
+                            <div class="card-icon">💬</div>
+                            <h3>411 Connect</h3>
+                            <p>Body doubling & co-working sessions</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+                        <div class="card-back glassmorphism">
+                            <h3>411 Connect</h3>
+                            <ul>
+                                <li>🏢 In-person or virtual</li>
+                                <li>⚡ Productivity boost</li>
+                                <li>🤝 Accountability partners</li>
+                                <li>📱 WhatsApp coordinated</li>
+                            </ul>
+                            <button class="btn btn-small">Join WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="initiative-card" data-category="growth">
+                    <div class="card-inner">
+                        <div class="card-front glassmorphism">
+                            <div class="card-icon">🚀</div>
+                            <h3>Mastermind</h3>
+                            <p>Monthly online strategy sessions</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+                        <div class="card-back glassmorphism">
+                            <h3>Mastermind Group</h3>
+                            <ul>
+                                <li>📅 Last Wednesday monthly</li>
+                                <li>⏰ 4:30-6:00pm</li>
+                                <li>🎯 Share wins & challenges</li>
+                                <li>🛠️ Collaborative solutions</li>
+                            </ul>
+                            <button class="btn btn-small">Join Group</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="initiative-card" data-category="events">
+                    <div class="card-inner">
+                        <div class="card-front glassmorphism">
+                            <div class="card-icon">🎉</div>
+                            <h3>Event Collaborations</h3>
+                            <p>Partner for workshops & networking</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+                        <div class="card-back glassmorphism">
+                            <h3>Collaborate With Us</h3>
+                            <ul>
+                                <li>🍷 Happy hours</li>
+                                <li>📚 Book clubs</li>
+                                <li>🔗 Cross-promotion</li>
+                                <li>🎤 Speaking opportunities</li>
+                            </ul>
+                            <button class="btn btn-small">Partner With Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Join us at our next gathering</p>
+            </div>
+            <div class="events-wrapper">
+                <div class="featured-event glassmorphism">
+                    <div class="event-date">
+                        <span class="day">19</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Monthly AI Networking Meeting</h3>
+                        <div class="event-details">
+                            <span>📍 Improving, Alpharetta</span>
+                            <span>⏰ 6:00 - 7:30 PM</span>
+                            <span>💵 $10 (includes dinner)</span>
+                        </div>
+                        <p>Join us for our monthly gathering featuring expert speakers, networking, and the latest in AI innovations.</p>
+                        <div class="event-countdown">
+                            <h4>Event starts in:</h4>
+                            <div class="countdown" id="countdown">
+                                <div class="time-unit">
+                                    <span class="time-value" id="days">00</span>
+                                    <span class="time-label">Days</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="hours">00</span>
+                                    <span class="time-label">Hours</span>
+                                </div>
+                                <div class="time-unit">
+                                    <span class="time-value" id="minutes">00</span>
+                                    <span class="time-label">Minutes</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Register on Eventbrite</a>
+                    </div>
+                </div>
+                <div class="events-calendar">
+                    <h3>Save the Dates</h3>
+                    <div class="calendar-items">
+                        <div class="calendar-item">
+                            <span class="date">July 17</span>
+                            <span class="event-name">Summer AI Workshop</span>
+                        </div>
+                        <div class="calendar-item">
+                            <span class="date">Aug 21</span>
+                            <span class="event-name">Monthly Meeting</span>
+                        </div>
+                        <div class="calendar-item">
+                            <span class="date">Sept 18</span>
+                            <span class="event-name">AI Ethics Panel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Hear from our amazing community members</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active glassmorphism">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        Joining Atlanta Women in AI transformed my career. The connections I've made and the knowledge I've gained have been invaluable in advancing my AI journey.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Sarah Chen</h4>
+                            <span>ML Engineer at Tech Corp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="join-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Join?</h2>
+                <p class="section-subtitle">Choose your path to get involved</p>
+            </div>
+            <div class="join-options">
+                <div class="join-card glassmorphism">
+                    <div class="join-icon">💬</div>
+                    <h3>WhatsApp Community</h3>
+                    <p>Join 50+ members in daily discussions, resource sharing, and real-time support.</p>
+                    <a href="#" class="btn btn-primary">Join WhatsApp</a>
+                </div>
+                <div class="join-card glassmorphism featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="join-icon">🎯</div>
+                    <h3>Attend Next Meeting</h3>
+                    <p>Experience our community firsthand at our next monthly gathering in Alpharetta.</p>
+                    <a href="#" class="btn btn-primary btn-glow">Register Now</a>
+                </div>
+                <div class="join-card glassmorphism">
+                    <div class="join-icon">🤝</div>
+                    <h3>Collaborate</h3>
+                    <p>Partner with us for events, workshops, or share your expertise with our community.</p>
+                    <a href="#" class="btn btn-primary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Atlanta Women in AI</h3>
+                    <p>Amplifying women's voices in artificial intelligence</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#events">Events</a>
+                    <a href="#join">Join Community</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get the latest AI insights and event updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Atlanta Women in AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
