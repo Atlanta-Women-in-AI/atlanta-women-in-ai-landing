@@ -232,13 +232,8 @@ function initCountdown() {
     const countdown = document.getElementById('countdown');
     if (!countdown) return;
 
-    // Set event date (next June 19th)
-    const now = new Date();
-    const eventDate = new Date(now.getFullYear(), 5, 19, 18, 0, 0); // June 19, 6:00 PM
-    
-    if (eventDate < now) {
-        eventDate.setFullYear(eventDate.getFullYear() + 1);
-    }
+    // Set event date (August 20, 2025)
+    const eventDate = new Date(2025, 7, 20, 18, 0, 0); // August 20, 2025, 6:00 PM
 
     function updateCountdown() {
         const now = new Date().getTime();
