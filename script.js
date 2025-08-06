@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initCountdown();
     initTestimonials();
     initSmoothScroll();
-    initCardFlips();
     initFormHandlers();
+    initNetwork();
 });
 
 // Navigation functionality
@@ -328,23 +328,6 @@ function initSmoothScroll() {
     });
 }
 
-// Card flip interactions
-function initCardFlips() {
-    const cards = document.querySelectorAll('.initiative-card');
-    
-    // Touch support for mobile
-    cards.forEach(card => {
-        card.addEventListener('touchstart', function() {
-            this.classList.add('touch-hover');
-        });
-        
-        card.addEventListener('touchend', function() {
-            setTimeout(() => {
-                this.classList.remove('touch-hover');
-            }, 3000);
-        });
-    });
-}
 
 // Form handlers
 function initFormHandlers() {
@@ -395,8 +378,226 @@ style.textContent = `
         }
     }
     
-    .touch-hover .card-inner {
-        transform: rotateY(180deg);
-    }
 `;
 document.head.appendChild(style);
+
+// Network Visualization
+function initNetwork() {
+    const container = document.querySelector('.network-container');
+    if (!container) return;
+    
+    const svg = container.querySelector('.network-svg');
+    const linesGroup = svg.querySelector('.network-lines');
+    const nodes = container.querySelectorAll('.network-node');
+    
+    // Define connections - ensuring every node is connected
+    const connections = [
+        // Core AI hub to all primary skills
+        ['ai', 'ml'],
+        ['ai', 'nn'],
+        ['ai', 'nlp'],
+        ['ai', 'cv'],
+        
+        // Machine Learning branch
+        ['ml', 'python'],
+        ['ml', 'pytorch'],
+        ['ml', 'scientist'],
+        ['ml', 'health'],
+        
+        // Data Science (nn) branch
+        ['nn', 'tf'],
+        ['nn', 'aws'],
+        ['nn', 'engineer'],
+        ['nn', 'finance'],
+        
+        // NLP branch
+        ['nlp', 'python'],
+        ['nlp', 'pytorch'],
+        ['nlp', 'researcher'],
+        ['nlp', 'finance'],
+        
+        // Computer Vision branch
+        ['cv', 'tf'],
+        ['cv', 'aws'],
+        ['cv', 'engineer'],
+        ['cv', 'edu'],
+        ['cv', 'pm'],
+        
+        // Cross-connections between tools and careers
+        ['python', 'scientist'],
+        ['python', 'researcher'],
+        ['pytorch', 'researcher'],
+        ['pytorch', 'scientist'],
+        ['tf', 'engineer'],
+        ['tf', 'pm'],
+        ['aws', 'pm'],
+        ['aws', 'engineer'],
+        
+        // Industries to multiple nodes
+        ['health', 'scientist'],
+        ['health', 'python'],
+        ['finance', 'pm'],
+        ['finance', 'aws'],
+        ['edu', 'researcher'],
+        ['edu', 'tf'],
+        ['marketing', 'nlp'],
+        ['marketing', 'ml'],
+        ['marketing', 'pm'],
+        
+        // Additional connections to ensure all nodes are linked
+        ['scientist', 'researcher'],
+        ['engineer', 'pm'],
+        ['pytorch', 'tf'],
+        ['python', 'aws'],
+        
+        // More cross-connections for denser network
+        ['health', 'nn'],
+        ['health', 'cv'],
+        ['finance', 'ml'],
+        ['finance', 'python'],
+        ['edu', 'nlp'],
+        ['edu', 'python'],
+        ['marketing', 'cv'],
+        ['marketing', 'scientist'],
+        
+        // Connect careers to tools
+        ['scientist', 'tf'],
+        ['scientist', 'aws'],
+        ['engineer', 'python'],
+        ['engineer', 'pytorch'],
+        ['researcher', 'tf'],
+        ['researcher', 'aws'],
+        ['pm', 'python'],
+        
+        // More industry connections
+        ['health', 'engineer'],
+        ['finance', 'scientist'],
+        ['edu', 'pm'],
+        ['marketing', 'engineer'],
+        
+        // Connect tools to each other
+        ['python', 'tf'],
+        ['pytorch', 'aws'],
+        
+        // Ensure top and bottom nodes are connected
+        ['health', 'ai'],
+        ['finance', 'ai'],
+        ['edu', 'ai'],
+        ['marketing', 'ai'],
+        ['engineer', 'ai'],
+        ['scientist', 'ai'],
+        ['researcher', 'ai'],
+        ['pm', 'ai']
+    ];
+    
+    // Create gradient definition
+    function createGradient() {
+        const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+        gradient.setAttribute('id', 'gradient-teal');
+        gradient.setAttribute('x1', '0%');
+        gradient.setAttribute('y1', '0%');
+        gradient.setAttribute('x2', '100%');
+        gradient.setAttribute('y2', '100%');
+        
+        const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+        stop1.setAttribute('offset', '0%');
+        stop1.setAttribute('style', 'stop-color:rgb(107,70,193);stop-opacity:0.6');
+        
+        const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+        stop2.setAttribute('offset', '100%');
+        stop2.setAttribute('style', 'stop-color:rgb(78,205,196);stop-opacity:0.8');
+        
+        gradient.appendChild(stop1);
+        gradient.appendChild(stop2);
+        defs.appendChild(gradient);
+        svg.appendChild(defs);
+    }
+    
+    // Draw connection lines with proper coordinate mapping
+    function drawConnections() {
+        linesGroup.innerHTML = '';
+        
+        // Create gradient if not exists
+        if (!svg.querySelector('#gradient-teal')) {
+            createGradient();
+        }
+        
+        connections.forEach(([from, to], index) => {
+            const fromNode = container.querySelector(`[data-node="${from}"]`);
+            const toNode = container.querySelector(`[data-node="${to}"]`);
+            
+            if (fromNode && toNode) {
+                // Get positions directly from inline styles (percentages)
+                const fromLeft = parseFloat(fromNode.style.left);
+                const fromTop = parseFloat(fromNode.style.top);
+                const toLeft = parseFloat(toNode.style.left);
+                const toTop = parseFloat(toNode.style.top);
+                
+                // Convert percentages to SVG coordinates
+                const x1 = (fromLeft / 100) * 800;
+                const y1 = (fromTop / 100) * 450;
+                const x2 = (toLeft / 100) * 800;
+                const y2 = (toTop / 100) * 450;
+                
+                // Calculate control point for curve
+                const midX = (x1 + x2) / 2;
+                const midY = (y1 + y2) / 2;
+                const offset = 20;
+                
+                // Create curved path
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const d = `M ${x1} ${y1} Q ${midX + offset * Math.sin(index * 0.3)} ${midY - offset * Math.cos(index * 0.3)} ${x2} ${y2}`;
+                path.setAttribute('d', d);
+                path.setAttribute('stroke', '#4ECDC4');
+                path.setAttribute('stroke-width', '2');
+                path.setAttribute('fill', 'none');
+                path.setAttribute('opacity', '0.6');
+                
+                linesGroup.appendChild(path);
+                
+                // Add connection dots
+                const dot1 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                dot1.setAttribute('cx', x1);
+                dot1.setAttribute('cy', y1);
+                dot1.setAttribute('r', '3');
+                dot1.setAttribute('fill', '#4ECDC4');
+                dot1.setAttribute('opacity', '0.6');
+                linesGroup.appendChild(dot1);
+                
+                const dot2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                dot2.setAttribute('cx', x2);
+                dot2.setAttribute('cy', y2);
+                dot2.setAttribute('r', '3');
+                dot2.setAttribute('fill', '#4ECDC4');
+                dot2.setAttribute('opacity', '0.6');
+                linesGroup.appendChild(dot2);
+            }
+        });
+    }
+    
+    // Initial draw with longer delay to ensure DOM is ready
+    setTimeout(() => {
+        drawConnections();
+        // Redraw after a moment to ensure proper positioning
+        setTimeout(drawConnections, 500);
+    }, 200);
+    
+    // Redraw on resize
+    window.addEventListener('resize', debounce(drawConnections, 250));
+    
+    // Remove hover effects - keeping nodes static
+}
+
+// Debounce utility function
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}

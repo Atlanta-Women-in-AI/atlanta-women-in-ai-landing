@@ -1,0 +1,18 @@
+{
+  "name": "atlanta-women-in-ai",
+  "version": "1.0.0",
+  "description": "Atlanta Women in AI - Empowering Women in Artificial Intelligence",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "women in tech",
+    "AI",
+    "artificial intelligence",
+    "atlanta"
+  ],
+  "author": "",
+  "license": "ISC"
+}

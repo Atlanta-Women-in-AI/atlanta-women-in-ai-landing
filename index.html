@@ -27,8 +27,7 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#why-join" class="nav-link">Why Join</a>
                 <a href="#events" class="nav-link">Events</a>
-                <a href="#past-events" class="nav-link">Past Events</a>
-                <a href="#testimonials" class="nav-link">Stories</a>
+                <a href="contact.html" class="nav-link">Contact</a>
                 <a href="#join" class="nav-link nav-cta">Join Us</a>
             </div>
             <div class="nav-toggle" id="navToggle">
@@ -60,7 +59,7 @@
             </p>
             <div class="hero-cta-group">
                 <a href="#join" class="btn btn-primary btn-glow">Join Us</a>
-                <a href="#events" class="btn btn-secondary">Next Event →</a>
+                <a href="#events" class="btn btn-secondary">Next Event</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -88,31 +87,76 @@
                     </div>
                 </div>
                 <div class="about-visual">
-                    <div class="floating-cards" id="floatingCards">
-                        <!-- Core tech cards (larger) -->
-                        <div class="float-card card-primary card-1">AI</div>
-                        <div class="float-card card-primary card-2">ML</div>
-                        <div class="float-card card-primary card-3">Data</div>
-                        <div class="float-card card-primary card-4">Tech</div>
+                    <div class="network-container">
+                        <svg class="network-svg" viewBox="0 0 800 450">
+                            <!-- Connection lines -->
+                            <g class="network-lines"></g>
+                            <!-- Nodes will be positioned via CSS -->
+                        </svg>
                         
-                        <!-- Diverse background cards -->
-                        <div class="float-card card-secondary card-5">Marketing</div>
-                        <div class="float-card card-secondary card-6">Business</div>
-                        <div class="float-card card-secondary card-7">Design</div>
-                        <div class="float-card card-secondary card-8">Healthcare</div>
-                        <div class="float-card card-secondary card-9">Finance</div>
-                        <div class="float-card card-secondary card-10">Education</div>
-                        <div class="float-card card-secondary card-11">Consulting</div>
-                        <div class="float-card card-secondary card-12">Research</div>
-                        <div class="float-card card-secondary card-13">Product</div>
-                        <div class="float-card card-secondary card-14">Strategy</div>
-                        <div class="float-card card-secondary card-15">Analytics</div>
-                        <div class="float-card card-secondary card-16">Operations</div>
-                        <div class="float-card card-secondary card-17">Legal</div>
-                        <div class="float-card card-secondary card-18">HR</div>
-                        <div class="float-card card-secondary card-19">Sales</div>
-                        <div class="float-card card-secondary card-20">Media</div>
-                        
+                        <!-- Network nodes -->
+                        <div class="network-nodes">
+                            <!-- Core nodes -->
+                            <div class="network-node node-core" data-node="ai" style="left: 50%; top: 50%;">
+                                <span>AI</span>
+                            </div>
+                            
+                            <!-- Primary skill nodes -->
+                            <div class="network-node node-primary" data-node="ml" style="left: 30%; top: 30%;">
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="network-node node-primary" data-node="nn" style="left: 70%; top: 30%;">
+                                <span>Data Science</span>
+                            </div>
+                            <div class="network-node node-primary" data-node="nlp" style="left: 30%; top: 70%;">
+                                <span>NLP</span>
+                            </div>
+                            <div class="network-node node-primary" data-node="cv" style="left: 70%; top: 70%;">
+                                <span>Computer Vision</span>
+                            </div>
+                            
+                            <!-- Secondary nodes - Tools -->
+                            <div class="network-node node-secondary" data-node="python" style="left: 15%; top: 20%;">
+                                <span>Python</span>
+                            </div>
+                            <div class="network-node node-secondary" data-node="tf" style="left: 85%; top: 20%;">
+                                <span>TensorFlow</span>
+                            </div>
+                            <div class="network-node node-secondary" data-node="pytorch" style="left: 15%; top: 50%;">
+                                <span>PyTorch</span>
+                            </div>
+                            <div class="network-node node-secondary" data-node="aws" style="left: 85%; top: 50%;">
+                                <span>AWS</span>
+                            </div>
+                            
+                            <!-- Career nodes -->
+                            <div class="network-node node-tertiary" data-node="engineer" style="left: 10%; top: 80%;">
+                                <span>AI Engineer</span>
+                            </div>
+                            <div class="network-node node-tertiary" data-node="scientist" style="left: 35%; top: 90%;">
+                                <span>Data Scientist</span>
+                            </div>
+                            <div class="network-node node-tertiary" data-node="researcher" style="left: 65%; top: 90%;">
+                                <span>ML Researcher</span>
+                            </div>
+                            <div class="network-node node-tertiary" data-node="pm" style="left: 90%; top: 80%;">
+                                <span>Product Manager</span>
+                            </div>
+                            
+                            <!-- Industry nodes -->
+                            <div class="network-node node-small" data-node="health" style="left: 20%; top: 10%;">
+                                <span>Healthcare</span>
+                            </div>
+                            <div class="network-node node-small" data-node="finance" style="left: 50%; top: 15%;">
+                                <span>Finance</span>
+                            </div>
+                            <div class="network-node node-small" data-node="edu" style="left: 80%; top: 10%;">
+                                <span>Education</span>
+                            </div>
+                            <div class="network-node node-small" data-node="marketing" style="left: 35%; top: 5%;">
+                                <span>Marketing</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,130 +171,115 @@
                 <p class="section-subtitle">Discover the benefits of being part of our thriving community</p>
             </div>
             <div class="initiatives-grid">
-                <div class="initiative-card" data-category="networking">
-                    <div class="card-inner">
-                        <div class="card-front glassmorphism">
-                            <div class="card-icon">🤝</div>
-                            <h3>Monthly Meetings</h3>
-                            <p>Connect in-person every 3rd Wednesday</p>
-                            <span class="learn-more">Learn more →</span>
-                        </div>
-                        <div class="card-back glassmorphism">
-                            <h3>Monthly Meetings</h3>
-                            <ul>
-                                <li>📍 Alpharetta location</li>
-                                <li>🕐 Noon - 1:30pm</li>
-                                <li>🍽️ Lunch included ($10)</li>
-                                <li>📚 Expert speakers & workshops</li>
-                            </ul>
-                            <a href="https://www.meetup.com/atlanta-women-in-ai/" target="_blank" class="btn btn-small">Register Now</a>
-                        </div>
+                <div class="initiative-card glassmorphism" data-category="networking">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
                     </div>
+                    <h3>Monthly Meetings</h3>
+                    <p>Connect in-person every 3rd Wednesday</p>
+                    <ul>
+                        <li>Alpharetta location</li>
+                        <li>Noon - 1:30pm</li>
+                        <li>Lunch included ($10)</li>
+                        <li>Expert speakers & workshops</li>
+                    </ul>
+                    <a href="https://www.eventbrite.com/e/atlanta-women-in-ai-stop-prompting-and-start-building-custom-gpts-tickets-1537924496569?aff=erelexpmlt" target="_blank" class="btn btn-small">Register Now</a>
                 </div>
 
-                <div class="initiative-card" data-category="learning">
-                    <div class="card-inner">
-                        <div class="card-front glassmorphism">
-                            <div class="card-icon">🎓</div>
-                            <h3>Masterclasses</h3>
-                            <p>Feature your AI expertise</p>
-                            <span class="learn-more">Learn more →</span>
-                        </div>
-                        <div class="card-back glassmorphism">
-                            <h3>Masterclass Program</h3>
-                            <ul>
-                                <li>🌟 Showcase your courses</li>
-                                <li>📢 Reach our community</li>
-                                <li>🤝 Referral opportunities</li>
-                                <li>💡 Knowledge sharing</li>
-                            </ul>
-                            <button class="btn btn-small">Submit Class</button>
-                        </div>
+                <div class="initiative-card glassmorphism" data-category="learning">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
                     </div>
+                    <h3>Masterclasses</h3>
+                    <p>Feature your AI expertise</p>
+                    <ul>
+                        <li>Showcase your courses</li>
+                        <li>Reach our community</li>
+                        <li>Referral opportunities</li>
+                        <li>Knowledge sharing</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-small">Submit Class</a>
                 </div>
 
-                <div class="initiative-card" data-category="collaboration">
-                    <div class="card-inner">
-                        <div class="card-front glassmorphism">
-                            <div class="card-icon">🧠</div>
-                            <h3>Think Tank</h3>
-                            <p>Get feedback on your AI projects</p>
-                            <span class="learn-more">Learn more →</span>
-                        </div>
-                        <div class="card-back glassmorphism">
-                            <h3>Think Tank Sessions</h3>
-                            <ul>
-                                <li>💭 30-min brainstorming</li>
-                                <li>🔄 Reciprocal feedback</li>
-                                <li>🚀 Project acceleration</li>
-                                <li>👥 Peer expertise</li>
-                            </ul>
-                            <button class="btn btn-small">Join Session</button>
-                        </div>
+                <div class="initiative-card glassmorphism" data-category="collaboration">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
                     </div>
+                    <h3>Think Tank</h3>
+                    <p>Get feedback on your AI projects</p>
+                    <ul>
+                        <li>30-min brainstorming</li>
+                        <li>Reciprocal feedback</li>
+                        <li>Project acceleration</li>
+                        <li>Peer expertise</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-small">Join Session</a>
                 </div>
 
-                <div class="initiative-card" data-category="networking">
-                    <div class="card-inner">
-                        <div class="card-front glassmorphism">
-                            <div class="card-icon">💬</div>
-                            <h3>411 Connect</h3>
-                            <p>Body doubling & co-working sessions</p>
-                            <span class="learn-more">Learn more →</span>
-                        </div>
-                        <div class="card-back glassmorphism">
-                            <h3>411 Connect</h3>
-                            <ul>
-                                <li>🏢 In-person or virtual</li>
-                                <li>⚡ Productivity boost</li>
-                                <li>🤝 Accountability partners</li>
-                                <li>📱 WhatsApp coordinated</li>
-                            </ul>
-                            <a href="https://chat.whatsapp.com/L1mKOvGOpjdCDaNP8WdmkV" target="_blank" class="btn btn-small">Join WhatsApp</a>
-                        </div>
+                <div class="initiative-card glassmorphism" data-category="networking">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
                     </div>
+                    <h3>411 Connect</h3>
+                    <p>Body doubling & co-working sessions</p>
+                    <ul>
+                        <li>In-person or virtual</li>
+                        <li>Productivity boost</li>
+                        <li>Accountability partners</li>
+                        <li>WhatsApp coordinated</li>
+                    </ul>
+                    <a href="https://chat.whatsapp.com/L1mKOvGOpjdCDaNP8WdmkV" target="_blank" class="btn btn-small">Join WhatsApp</a>
                 </div>
 
-                <div class="initiative-card" data-category="growth">
-                    <div class="card-inner">
-                        <div class="card-front glassmorphism">
-                            <div class="card-icon">🚀</div>
-                            <h3>Mastermind</h3>
-                            <p>Monthly online strategy sessions</p>
-                            <span class="learn-more">Learn more →</span>
-                        </div>
-                        <div class="card-back glassmorphism">
-                            <h3>Mastermind Group</h3>
-                            <ul>
-                                <li>📅 Last Wednesday monthly</li>
-                                <li>⏰ 4:30-6:00pm</li>
-                                <li>🎯 Share wins & challenges</li>
-                                <li>🛠️ Collaborative solutions</li>
-                            </ul>
-                            <button class="btn btn-small">Join Group</button>
-                        </div>
+                <div class="initiative-card glassmorphism" data-category="growth">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
                     </div>
+                    <h3>Mastermind</h3>
+                    <p>Monthly online strategy sessions</p>
+                    <ul>
+                        <li>Last Wednesday monthly</li>
+                        <li>4:30-6:00pm</li>
+                        <li>Share wins & challenges</li>
+                        <li>Collaborative solutions</li>
+                    </ul>
+                    <a href="https://chat.whatsapp.com/JPLE3GXfglQIMWsLjMO0iC" target="_blank" class="btn btn-small">Join WhatsApp</a>
                 </div>
 
-                <div class="initiative-card" data-category="events">
-                    <div class="card-inner">
-                        <div class="card-front glassmorphism">
-                            <div class="card-icon">🎉</div>
-                            <h3>Event Collaborations</h3>
-                            <p>Partner for workshops & networking</p>
-                            <span class="learn-more">Learn more →</span>
-                        </div>
-                        <div class="card-back glassmorphism">
-                            <h3>Collaborate With Us</h3>
-                            <ul>
-                                <li>🍷 Happy hours</li>
-                                <li>📚 Book clubs</li>
-                                <li>🔗 Cross-promotion</li>
-                                <li>🎤 Speaking opportunities</li>
-                            </ul>
-                            <button class="btn btn-small">Partner With Us</button>
-                        </div>
+                <div class="initiative-card glassmorphism" data-category="events">
+                    <div class="card-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                        </svg>
                     </div>
+                    <h3>Event Collaborations</h3>
+                    <p>Partner for workshops & networking</p>
+                    <ul>
+                        <li>Happy hours</li>
+                        <li>Book clubs</li>
+                        <li>Cross-promotion</li>
+                        <li>Speaking opportunities</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-small">Partner With Us</a>
                 </div>
             </div>
         </div>
@@ -260,177 +289,156 @@
     <section id="events" class="events">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Upcoming Events</h2>
-                <p class="section-subtitle">Join us at our next gathering</p>
+                <h2 class="section-title">Events</h2>
+                <p class="section-subtitle">Join our community gatherings and workshops</p>
             </div>
-            <div class="events-wrapper">
-                <div class="featured-event glassmorphism">
-                    <div class="event-date">
-                        <span class="day">20</span>
-                        <span class="month">AUG</span>
-                    </div>
-                    <div class="event-content">
-                        <h3>Monthly AI Networking Meeting</h3>
-                        <div class="event-details">
-                            <span>📍 Improving, Alpharetta</span>
-                            <span>⏰ 6:00 - 7:30 PM</span>
-                            <span>💵 $10 (includes dinner)</span>
+            
+            <!-- Main Events Layout -->
+            <div class="events-main-layout">
+                <!-- Left: Current Event Details -->
+                <div class="current-event-panel glassmorphism">
+                    <span class="event-badge-small">NEXT EVENT</span>
+                    <h3>Stop Prompting and Start Building Custom GPTs</h3>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Improving, Alpharetta</span>
                         </div>
-                        <p>Join us for our monthly gathering featuring expert speakers, networking, and the latest in AI innovations.</p>
-                        <div class="event-countdown">
-                            <h4>Event starts in:</h4>
-                            <div class="countdown" id="countdown">
-                                <div class="time-unit">
-                                    <span class="time-value" id="days">00</span>
-                                    <span class="time-label">Days</span>
+                        <div class="detail-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <span>August 20, 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>12:00 - 1:30 PM</span>
+                        </div>
+                        <div class="detail-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18l-1 9H4L3 3z"></path>
+                                <path d="M3 3l1 9v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9l1-9"></path>
+                                <line x1="9" y1="7" x2="9" y2="17"></line>
+                                <line x1="15" y1="7" x2="15" y2="17"></line>
+                            </svg>
+                            <span>$10 (lunch provided)</span>
+                        </div>
+                    </div>
+                    <p class="event-description">No coding. No overwhelm. Just the easiest way to create your own intelligent AI assistant - one that remembers your voice, follows your style, and actually helps you get things done.</p>
+                    <div class="event-actions">
+                        <a href="https://www.eventbrite.com/e/atlanta-women-in-ai-stop-prompting-and-start-building-custom-gpts-tickets-1537924496569?aff=erelexpmlt" target="_blank" class="btn btn-primary btn-large">Register Now</a>
+                        <a href="event-august-2025.html" class="event-details-link">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Right: Countdown & Upcoming -->
+                <div class="events-sidebar">
+                    <!-- Countdown -->
+                    <div class="countdown-card glassmorphism">
+                        <h4>Event starts in:</h4>
+                        <div class="countdown" id="countdown">
+                            <div class="time-unit">
+                                <span class="time-value" id="days">00</span>
+                                <span class="time-label">Days</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="hours">00</span>
+                                <span class="time-label">Hours</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-value" id="minutes">00</span>
+                                <span class="time-label">Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="upcoming-events-card glassmorphism">
+                        <h4>More Upcoming Events</h4>
+                        <div class="upcoming-list">
+                            <div class="upcoming-item">
+                                <div class="upcoming-date">
+                                    <span class="month">SEP</span>
+                                    <span class="day">17</span>
                                 </div>
-                                <div class="time-unit">
-                                    <span class="time-value" id="hours">00</span>
-                                    <span class="time-label">Hours</span>
+                                <div class="upcoming-info">
+                                    <h5>Networking with Thrive Nexus</h5>
+                                    <p>Special collaboration event</p>
                                 </div>
-                                <div class="time-unit">
-                                    <span class="time-value" id="minutes">00</span>
-                                    <span class="time-label">Minutes</span>
+                            </div>
+                            <div class="upcoming-item">
+                                <div class="upcoming-date">
+                                    <span class="month">OCT</span>
+                                    <span class="day">15</span>
+                                </div>
+                                <div class="upcoming-info">
+                                    <h5>October Meetup</h5>
+                                    <p>Details coming soon</p>
+                                </div>
+                            </div>
+                            <div class="upcoming-item">
+                                <div class="upcoming-date">
+                                    <span class="month">NOV</span>
+                                    <span class="day">19</span>
+                                </div>
+                                <div class="upcoming-info">
+                                    <h5>Year-End Networking</h5>
+                                    <p>Celebrate & connect</p>
                                 </div>
                             </div>
                         </div>
-                        <a href="https://www.meetup.com/atlanta-women-in-ai/" target="_blank" class="btn btn-primary">Register on Meetup</a>
-                    </div>
-                </div>
-                <div class="events-calendar">
-                    <h3>Save the Dates</h3>
-                    <div class="calendar-items">
-                        <div class="calendar-item">
-                            <span class="date">Sept 17</span>
-                            <span class="event-name">Networking with Thrive Nexus</span>
-                        </div>
-                        <div class="calendar-item">
-                            <span class="date">Oct 15</span>
-                            <span class="event-name">TBD</span>
-                        </div>
-                        <div class="calendar-item">
-                            <span class="date">Nov 19</span>
-                            <span class="event-name">Year-End Networking</span>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Past Events Section -->
-    <section id="past-events" class="past-events">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Past Events</h2>
-                <p class="section-subtitle">A look back at our inspiring gatherings</p>
-            </div>
-            <div class="past-events-grid">
-                <!-- June 2025 Event -->
-                <div class="past-event-card glassmorphism">
-                    <div class="event-header">
-                        <div class="event-date-badge">
+            <!-- Past Events -->
+            <div class="past-events-section">
+                <h3 class="events-section-title">Past Events</h3>
+                <div class="past-events-grid">
+                    <div class="event-card glassmorphism">
+                        <div class="event-date-tag past">
                             <span class="month">JUN</span>
                             <span class="day">19</span>
-                            <span class="year">2025</span>
                         </div>
-                        <h3>What Happens When AI Breaks™</h3>
+                        <div class="event-card-content">
+                            <h4>What Happens When AI Breaks™</h4>
+                            <p>Trina Hill on building resilient AI systems and leadership.</p>
+                            <a href="event-june-2025.html" class="event-link">View Details →</a>
+                        </div>
                     </div>
-                    <div class="event-meta">
-                        <span>📍 Improving, Alpharetta</span>
-                        <span>⏰ 6:00 - 7:30 PM</span>
-                        <span>👥 Evening Session</span>
-                    </div>
-                    <div class="event-description">
-                        <p><strong>Building Resilient Systems, Leading with Intent</strong></p>
-                        <p>Trina Hill led an inspiring discussion on why women need to lead AI - because women know how to look ahead. When things fail, women are resilient leaders who know how to rebuild better.</p>
-                        <blockquote class="speaker-quote">
-                            "We don't build trust in systems just because they work - we build trust in how we prepare for when they don't work."
-                            <cite>- Trina Hill</cite>
-                        </blockquote>
-                    </div>
-                    <div class="event-sponsors">
-                        <span class="sponsor-label">Sponsors:</span> Turnberry Solutions, Becky Berry Career Coaching, Yeh & Johnson Technology Consulting
-                    </div>
-                </div>
-
-                <!-- May 2024 Event -->
-                <div class="past-event-card glassmorphism">
-                    <div class="event-header">
-                        <div class="event-date-badge">
+                    
+                    <div class="event-card glassmorphism">
+                        <div class="event-date-tag past">
                             <span class="month">MAY</span>
                             <span class="day">21</span>
-                            <span class="year">2024</span>
                         </div>
-                        <h3>Harnessing AI IRL</h3>
+                        <div class="event-card-content">
+                            <h4>Harnessing AI IRL</h4>
+                            <p>Hands-on workshop for using AI in real life applications.</p>
+                            <a href="#" class="event-link">View Details →</a>
+                        </div>
                     </div>
-                    <div class="event-meta">
-                        <span>📍 Improving, Alpharetta</span>
-                        <span>⏰ 12:00 - 1:30 PM</span>
-                        <span>💻 Hands-on Workshop</span>
-                    </div>
-                    <div class="event-description">
-                        <p>A hands-on session where members learned tips & tricks for using AI in real life. Participants shared their own AI hacks and discoveries.</p>
-                        <p><strong>Facilitators:</strong> Erika Robinson and Tiffany Whitener</p>
-                        <p>Members brought their laptops for an interactive learning experience focused on using AI to organize, focus, and enjoy life.</p>
-                    </div>
-                    <div class="event-sponsors">
-                        <span class="sponsor-label">Sponsors:</span> Becky Berry Career Coaching, Johnson & Yeh AI & Tech Consulting, Turnberry Solutions
-                    </div>
-                </div>
-
-                <!-- April 2025 Event -->
-                <div class="past-event-card glassmorphism">
-                    <div class="event-header">
-                        <div class="event-date-badge">
+                    
+                    <div class="event-card glassmorphism">
+                        <div class="event-date-tag past">
                             <span class="month">APR</span>
                             <span class="day">16</span>
-                            <span class="year">2025</span>
                         </div>
-                        <h3>AI Prompts Party!</h3>
-                    </div>
-                    <div class="event-meta">
-                        <span>📍 Improving, Alpharetta</span>
-                        <span>⏰ 12:00 - 1:30 PM</span>
-                        <span>🎉 Interactive Workshop</span>
-                    </div>
-                    <div class="event-description">
-                        <p>Atlanta Women in AI's first prompt party! A hands-on event where facilitators showed the ins and outs of creating better AI prompts.</p>
-                        <p><strong>Facilitators:</strong> Sue Yeh Johnson and Becky Berry</p>
-                        <p>Participants brought their laptops for an interactive session exploring prompt engineering techniques and best practices.</p>
-                    </div>
-                    <div class="event-sponsors">
-                        <span class="sponsor-label">Founding Sponsors:</span> Becky Berry Career Coaching and Snapstream Consulting, LLC
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Success Stories</h2>
-                <p class="section-subtitle">Hear from our amazing community members</p>
-            </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card active glassmorphism">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">
-                        Joining Atlanta Women in AI transformed my career. The connections I've made and the knowledge I've gained have been invaluable in advancing my AI journey.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-info">
-                            <h4>Sarah Chen</h4>
-                            <span>ML Engineer at Tech Corp</span>
+                        <div class="event-card-content">
+                            <h4>AI Prompts Party!</h4>
+                            <p>Interactive session on prompt engineering best practices.</p>
+                            <a href="#" class="event-link">View Details →</a>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-dots">
-                    <span class="dot active" data-slide="0"></span>
-                    <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
                 </div>
             </div>
         </div>
@@ -445,23 +453,40 @@
             </div>
             <div class="join-options">
                 <div class="join-card glassmorphism">
-                    <div class="join-icon">💬</div>
+                    <div class="join-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </div>
                     <h3>WhatsApp Community</h3>
                     <p>Join 50+ members in daily discussions, resource sharing, and real-time support.</p>
                     <a href="https://chat.whatsapp.com/L1mKOvGOpjdCDaNP8WdmkV" target="_blank" class="btn btn-primary">Join WhatsApp</a>
                 </div>
                 <div class="join-card glassmorphism featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <div class="join-icon">🎯</div>
+                    <div class="join-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
                     <h3>Attend Next Meeting</h3>
                     <p>Experience our community firsthand at our next monthly gathering in Alpharetta.</p>
-                    <a href="https://www.meetup.com/atlanta-women-in-ai/" target="_blank" class="btn btn-primary btn-glow">Register Now</a>
+                    <a href="https://www.eventbrite.com/e/atlanta-women-in-ai-stop-prompting-and-start-building-custom-gpts-tickets-1537924496569?aff=erelexpmlt" target="_blank" class="btn btn-primary btn-glow">Register Now</a>
                 </div>
                 <div class="join-card glassmorphism">
-                    <div class="join-icon">🤝</div>
+                    <div class="join-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                    </div>
                     <h3>Collaborate</h3>
                     <p>Partner with us for events, workshops, or share your expertise with our community.</p>
-                    <a href="#" class="btn btn-primary">Get in Touch</a>
+                    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
                 </div>
             </div>
         </div>
@@ -490,7 +515,7 @@
                                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                             </svg>
                         </a>
-                        <a href="https://www.meetup.com/atlanta-women-in-ai/" target="_blank" aria-label="Meetup">
+                        <a href="https://www.eventbrite.com/e/atlanta-women-in-ai-stop-prompting-and-start-building-custom-gpts-tickets-1537924496569?aff=erelexpmlt" target="_blank" aria-label="Eventbrite">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M21.565 19.018c1.089-.185 2.11-.789 2.11-1.935 0-3.713-6.031-1.261-8.342-5.674-.768-1.528-.357-3.048.585-3.802.943-.754 2.486-.885 3.397-.098 1.099 1.189.43 2.657-.73 3.025-.469.184-.671-.445-.228-.704.297-.235.186-.804-.269-.923-.453-.119-.866.169-.963.626-.201.588.395.947 1.136.841 1.105-.211 1.852-1.489 1.364-2.719-.488-1.23-2.023-1.74-3.244-1.272-2.529.971-2.349 4.095-.961 5.515 2.372 2.571 6.76.895 6.76 3.547-.002.906-.763 1.344-1.615 1.523zm-4.09-1.913c-1.008-.147-1.657-.973-1.863-1.94-.243-1.206.182-2.316.864-2.722 1.256-.567 2.862.389 2.509 1.875-.173 1.215-1.329 2.817-1.51 2.787zm-3.616-1.328c-.445-2.046.23-3.982 1.222-4.615 1.688-.874 3.518.405 3.435 2.277.066 2.007-1.416 3.843-2.484 3.93-.832-.125-1.865-.675-2.173-1.592zm.503-7.933c1.185-.447 2.47.309 2.339 1.619-.003 1.44-1.479 2.638-2.429 2.388-1.095-.382-1.331-1.946-.713-2.993.238-.345.491-.643.803-1.014zm-1.408 2.024c.095 1.309-.723 2.569-1.784 2.712-1.077.015-1.974-1.278-1.64-2.393.457-1.235 1.962-1.842 2.75-.893.373.395.627.896.674 1.574zm-7.306-6.022c.793-1.113 2.651-1.266 3.287.045.472 1.287-.327 2.916-1.558 2.745-1.579.033-2.686-1.419-1.729-2.79zm-1.215 7.994c-.06 1.972-2.152 3.571-3.683 2.634-1.632-.672-1.584-3.228-.161-3.968 1.228-.75 3.049.075 3.844 1.334zm2.251-11.257c.506-.839 1.808-1.107 2.49-.331.682.775.339 2.078-.599 2.461-.937.382-2.123-.289-2.123-1.289-.001-.308.077-.607.232-.841zm11.767 21.917c-.581 0-1.088-.448-1.088-1.065 0-.616.465-1.064 1.088-1.064.624 0 1.089.489 1.089 1.064 0 .576-.507 1.065-1.089 1.065z"/>
                             </svg>
