@@ -167,26 +167,35 @@ function initParticles() {
 // Scroll animations
 function initScrollAnimations() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
+                // Use requestAnimationFrame for smoother animations
+                requestAnimationFrame(() => {
+                    entry.target.classList.add('animate-in');
+                    
+                    // Special animations for specific elements
+                    if (entry.target.classList.contains('value-card')) {
+                        entry.target.style.animationDelay = `${entry.target.dataset.delay || 0}ms`;
+                    }
+                });
                 
-                // Special animations for specific elements
-                if (entry.target.classList.contains('value-card')) {
-                    entry.target.style.animationDelay = `${entry.target.dataset.delay || 0}ms`;
-                }
+                // Unobserve after animation to improve performance
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe elements
+    // Observe elements with staggered delay
     document.querySelectorAll('.value-card, .initiative-card, .join-card').forEach((el, index) => {
-        el.dataset.delay = index * 100;
+        // Cap max delay and reduce stagger for initiative cards
+        const section = el.closest('section');
+        const isWhyJoin = section && section.id === 'why-join';
+        el.dataset.delay = isWhyJoin ? Math.min(index * 30, 150) : Math.min(index * 50, 300);
         observer.observe(el);
     });
 }
@@ -364,20 +373,43 @@ function initFormHandlers() {
 const style = document.createElement('style');
 style.textContent = `
     .animate-in {
-        animation: fadeInUp 0.8s ease forwards;
+        animation: fadeInUp 0.5s ease forwards;
+        will-change: transform, opacity;
     }
     
     @keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px) translateZ(0);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) translateZ(0);
         }
     }
     
+    /* Optimize initiative cards animation */
+    #why-join .initiative-card {
+        opacity: 0;
+        transform: translateY(20px) translateZ(0);
+    }
+    
+    #why-join .initiative-card.animate-in {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+        animation: fadeInQuick 0.4s ease forwards;
+    }
+    
+    @keyframes fadeInQuick {
+        from {
+            opacity: 0;
+            transform: translateY(15px) translateZ(0);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) translateZ(0);
+        }
+    }
 `;
 document.head.appendChild(style);
 

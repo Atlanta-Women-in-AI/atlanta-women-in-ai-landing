@@ -1091,8 +1091,11 @@ section {
     border: 1px solid rgba(78, 205, 196, 0.2);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
     border-radius: 24px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0); /* Force GPU acceleration */
+    will-change: transform;
+    transition: transform 0.2s ease;
     overflow: hidden;
+    backface-visibility: hidden; /* Prevent flicker */
 }
 
 .initiative-card::before {
@@ -1104,12 +1107,13 @@ section {
     height: 3px;
     background: var(--gradient-primary);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
 }
 
 .initiative-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 48px rgba(78, 205, 196, 0.2);
+    transform: translateY(-3px) translateZ(0);
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.15);
 }
 
 .initiative-card:hover::before {
@@ -1130,11 +1134,12 @@ section {
 
 .card-icon svg {
     color: var(--primary-teal);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
+    will-change: transform;
 }
 
 .initiative-card:hover .card-icon svg {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .initiative-card h3 {
@@ -1729,10 +1734,15 @@ section {
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 3rem;
     margin-bottom: 2rem;
+}
+
+.footer-brand {
+    text-align: right;
 }
 
 .footer-brand h3 {
@@ -1743,6 +1753,7 @@ section {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    justify-content: center;
 }
 
 .social-links a {
@@ -1764,14 +1775,10 @@ section {
 
 .footer-links {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    gap: 2rem;
+    align-items: center;
 }
 
-.footer-links h4,
-.footer-newsletter h4 {
-    margin-bottom: 1rem;
-}
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.7);
@@ -1783,24 +1790,6 @@ section {
     color: white;
 }
 
-.newsletter-form {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-}
-
-.newsletter-form input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border: none;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.newsletter-form input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
 
 .footer-bottom {
     text-align: center;
@@ -1881,7 +1870,17 @@ section {
     }
 
     .footer-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer-brand {
         text-align: center;
     }
 
@@ -1889,9 +1888,6 @@ section {
         justify-content: center;
     }
 
-    .newsletter-form {
-        flex-direction: column;
-    }
     
     /* Network visualization responsive */
     .network-container {
