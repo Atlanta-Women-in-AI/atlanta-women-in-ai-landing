@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What Happens When AI Breaks™ - Building Resilient Systems, Leading with Intent - Atlanta Women in AI Event">
+    <title>What Happens When AI Breaks™ - Atlanta Women in AI</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .event-hero {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(44, 62, 80, 0.05));
+            padding: 4rem 0 2rem;
+            margin-top: 80px;
+        }
+        
+        .event-content {
+            padding: 4rem 0;
+        }
+        
+        .event-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .event-body {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .event-info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-meta-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .event-meta-item svg {
+            color: var(--primary-teal);
+            flex-shrink: 0;
+        }
+        
+        .event-meta-item .label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: block;
+        }
+        
+        .event-meta-item .value {
+            font-weight: 600;
+            color: var(--primary-navy);
+            display: block;
+        }
+        
+        .quote-block {
+            background: linear-gradient(135deg, rgba(107, 70, 193, 0.05), rgba(78, 205, 196, 0.05));
+            border-left: 4px solid var(--primary-teal);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            font-style: italic;
+        }
+        
+        .quote-block p {
+            margin: 0;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .agenda-section {
+            background: rgba(78, 205, 196, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .agenda-section h3 {
+            color: var(--primary-navy);
+            margin-bottom: 1.5rem;
+        }
+        
+        .agenda-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(78, 205, 196, 0.2);
+        }
+        
+        .agenda-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .agenda-time {
+            font-weight: 600;
+            color: var(--primary-teal);
+            min-width: 140px;
+        }
+        
+        .agenda-details {
+            flex: 1;
+            color: var(--text-secondary);
+        }
+        
+        .past-event-badge {
+            display: inline-block;
+            background: #999;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 1rem;
+        }
+        
+        .sponsor-section {
+            background: rgba(44, 62, 80, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .sponsor-section h3 {
+            color: var(--primary-navy);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 968px) {
+            .event-main {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="logo.png" alt="Atlanta Women in AI" class="logo-img">
+                    <span class="logo-text">Atlanta Women in AI</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#why-join" class="nav-link">Why Join</a>
+                <a href="index.html#events" class="nav-link active">Events</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="index.html#join" class="nav-link nav-cta">Join Us</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-progress" id="navProgress"></div>
+    </nav>
+
+    <!-- Event Hero -->
+    <section class="event-hero">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-title">What Happens When AI Breaks™
+                    <span class="past-event-badge">PAST EVENT</span>
+                </h1>
+                <p class="section-subtitle">Building Resilient Systems, Leading with Intent</p>
+                <p class="section-subtitle">May 27, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Content -->
+    <section class="event-content">
+        <div class="container">
+            <div class="event-main">
+                <!-- Main Content -->
+                <div class="event-body">
+                    <p class="lead">
+                        Join us at a special evening meeting as <strong>Trina Hill</strong> talks with us about one of the major reasons women need to lead AI - women know how to look ahead. And, when things fail, women are resilient leaders who know how to rebuild - and rebuild better.
+                    </p>
+                    
+                    <div class="quote-block">
+                        <p>
+                            "We don't build trust in systems just because they work - we build trust in how we prepare for when they don't work. As AI continues to shape every part of our lives, real innovation means planning for failure, disruption, and recovery.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            That's not fear. That's foresight.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            And that's how women lead: with care, with clarity, and with the kind of resilience that doesn't just survive the future; it shapes it."
+                        </p>
+                        <p style="text-align: right; margin-top: 1rem; font-style: normal;">
+                            <strong>- Trina Hill</strong>
+                        </p>
+                    </div>
+                    
+                    <h3>About This Event</h3>
+                    <p>
+                        In this thought-provoking session, Trina Hill explored the critical importance of building resilient AI systems and the unique perspective women bring to AI leadership. The discussion covered:
+                    </p>
+                    
+                    <ul style="margin: 2rem 0; padding-left: 2rem;">
+                        <li style="margin-bottom: 0.5rem;">Planning for AI system failures and disruptions</li>
+                        <li style="margin-bottom: 0.5rem;">Building trust through transparency and preparedness</li>
+                        <li style="margin-bottom: 0.5rem;">The importance of foresight in AI development</li>
+                        <li style="margin-bottom: 0.5rem;">How women's leadership style contributes to more resilient AI systems</li>
+                        <li style="margin-bottom: 0.5rem;">Strategies for recovery and rebuilding when AI systems fail</li>
+                    </ul>
+                    
+                    <div class="agenda-section">
+                        <h3>Event Agenda</h3>
+                        <div class="agenda-item">
+                            <div class="agenda-time">6:00 PM - 6:30 PM</div>
+                            <div class="agenda-details">Check-in, mingling, appetizers</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">6:30 PM - 7:15 PM</div>
+                            <div class="agenda-details">What Happens When AI Breaks?™ with Trina Hill</div>
+                        </div>
+                        <div class="agenda-item">
+                            <div class="agenda-time">7:15 PM - 7:30 PM</div>
+                            <div class="agenda-details">Networking and Community Building</div>
+                        </div>
+                    </div>
+                    
+                    <h3>Key Takeaways</h3>
+                    <p>
+                        This event highlighted the critical role women play in shaping the future of AI by bringing unique perspectives on resilience, foresight, and leadership. Attendees gained insights into:
+                    </p>
+                    
+                    <ul style="margin: 2rem 0; padding-left: 2rem;">
+                        <li style="margin-bottom: 0.5rem;">Why planning for failure is essential in AI development</li>
+                        <li style="margin-bottom: 0.5rem;">How to build trust in AI systems through transparency</li>
+                        <li style="margin-bottom: 0.5rem;">The importance of diverse perspectives in creating resilient technology</li>
+                        <li style="margin-bottom: 0.5rem;">Practical strategies for leading with intent in the AI space</li>
+                    </ul>
+                    
+                    <div class="sponsor-section">
+                        <h3>Event Sponsors</h3>
+                        <p><strong>Founding Sponsors:</strong> Turnberry Solutions, Becky Berry Career Coaching, and Yeh & Johnson Technology Consulting</p>
+                        <p><strong>Meeting Sponsor:</strong> Improving</p>
+                    </div>
+                    
+                    <div style="background: rgba(78, 205, 196, 0.1); padding: 1.5rem; border-radius: 15px; margin-top: 2rem; text-align: center;">
+                        <p>Thank you to all who attended and made this event a success!</p>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="event-sidebar">
+                    <!-- Event Details Card -->
+                    <div class="event-info-card glassmorphism">
+                        <h3 style="margin-bottom: 1.5rem;">Event Details</h3>
+                        
+                        <div class="event-meta-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <div>
+                                <span class="label">Date</span>
+                                <span class="value">Thursday, June 19, 2025</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-meta-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <div>
+                                <span class="label">Time</span>
+                                <span class="value">6:00 PM - 7:30 PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-meta-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div>
+                                <span class="label">Location</span>
+                                <span class="value">Improving</span>
+                                <span class="label">11675 Rainwater Drive, Suite 100<br>Alpharetta, GA 30009</span>
+                            </div>
+                        </div>
+                        
+                        <div class="event-meta-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h18l-1 9H4L3 3z"></path>
+                                <path d="M3 3l1 9v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-9l1-9"></path>
+                                <line x1="9" y1="7" x2="9" y2="17"></line>
+                                <line x1="15" y1="7" x2="15" y2="17"></line>
+                            </svg>
+                            <div>
+                                <span class="label">Ticket Price</span>
+                                <span class="value">$10.00</span>
+                                <span class="label">Appetizers provided!</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- More Events Card -->
+                    <div class="event-info-card glassmorphism">
+                        <h3>Explore More Events</h3>
+                        <p style="margin: 1rem 0;">Check out our upcoming events and past sessions.</p>
+                        <a href="index.html#events" class="btn btn-primary" style="width: 100%; text-align: center;">View All Events</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="footer.js"></script>
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
