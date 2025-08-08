@@ -633,3 +633,31 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+// Email form submission
+const emailForm = document.getElementById('footerEmailForm');
+const formMessage = document.getElementById('formMessage');
+
+if (emailForm) {
+    emailForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = this.querySelector('.email-input');
+        const email = emailInput.value;
+        
+        // Show success message
+        formMessage.textContent = 'Thank you for subscribing! Check your inbox soon.';
+        formMessage.className = 'form-message success';
+        
+        // Clear form
+        emailInput.value = '';
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+            formMessage.className = 'form-message';
+        }, 5000);
+        
+        // Here you would normally send the email to your backend
+        console.log('Email submitted:', email);
+    });
+}
