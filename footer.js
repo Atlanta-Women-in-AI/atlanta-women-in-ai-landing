@@ -1,4 +1,6 @@
 // Footer Component
+import { initFooterNewsletter } from './newsletter-handler.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Find all elements with class 'footer-container'
     const footerContainers = document.querySelectorAll('.footer-container');
@@ -10,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer-main">
                     <!-- Email Signup Section -->
                     <div class="footer-signup">
-                        <h4>Get Exclusive AI Content</h4>
-                        <p>Weekly insights delivered to your inbox</p>
+                        <h4>Sign Up for Our Newsletter</h4>
+                        <p>Insights delivered to your inbox</p>
                         <form class="email-form" id="footerEmailForm">
                             <input type="email" placeholder="Enter your email" required class="email-input">
                             <button type="submit" class="email-submit">Subscribe</button>
@@ -53,29 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = footerHTML;
     });
     
-    // Initialize email form functionality
-    const emailForm = document.getElementById('footerEmailForm');
-    const formMessage = document.getElementById('formMessage');
-    
-    if (emailForm) {
-        emailForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = e.target.querySelector('input[type="email"]').value;
-            
-            // Simple email validation
-            if (email && email.includes('@')) {
-                formMessage.textContent = 'Thank you for subscribing!';
-                formMessage.style.color = 'var(--primary-teal)';
-                emailForm.reset();
-                
-                // Clear message after 3 seconds
-                setTimeout(() => {
-                    formMessage.textContent = '';
-                }, 3000);
-            } else {
-                formMessage.textContent = 'Please enter a valid email address';
-                formMessage.style.color = '#ef4444';
-            }
-        });
-    }
+    // Initialize footer newsletter handler with EmailJS
+    initFooterNewsletter();
 });

@@ -14,5 +14,8 @@
     "atlanta"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1"
+  }
 }
