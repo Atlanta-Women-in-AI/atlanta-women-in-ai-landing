@@ -237,8 +237,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.disabled = true;
                     
                     try {
-                        // When EmailJS is configured, this will send the email
-                        // For now, just show success message
+                        // Send email using EmailJS
+                        const templateParams = {
+                            subscriber_email: email,
+                            signup_date: new Date().toLocaleString(),
+                            signup_source: window.location.pathname
+                        };
+                        
+                        await emailjs.send(
+                            'service_z3s1i63',
+                            'newsletter_template',
+                            templateParams
+                        );
+                        
                         formMessage.textContent = 'Thank you for subscribing!';
                         formMessage.style.color = 'var(--primary-teal)';
                         emailForm.reset();

@@ -396,8 +396,14 @@
     <script src="footer.js"></script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init('CH1VCzeSQiH7E-p7A');
+        })();
+    </script>
     <!-- Contact Form Handler -->
-    <script type="module" src="contact-form-handler.js"></script>
+    <script src="contact-form-handler.js"></script>
     <!-- Newsletter Popup -->
     <script src="newsletter-popup.js"></script>
 </body>

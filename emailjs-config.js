@@ -2,12 +2,11 @@
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
-// IMPORTANT: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-emailjs.init('YOUR_PUBLIC_KEY');
+emailjs.init('CH1VCzeSQiH7E-p7A');
 
 // EmailJS Service Configuration
 const EMAILJS_CONFIG = {
-    serviceId: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+    serviceId: 'service_z3s1i63',
     contactTemplateId: 'contact_form_template', // Template for contact form
     newsletterTemplateId: 'newsletter_template' // Template for newsletter signup
 };

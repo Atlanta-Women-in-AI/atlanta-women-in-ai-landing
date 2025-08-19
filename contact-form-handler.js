@@ -1,5 +1,4 @@
 // Contact Form Handler with EmailJS Integration
-import { sendContactFormEmail } from './emailjs-config.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Handle inquiry type selection
@@ -58,23 +57,56 @@ document.addEventListener('DOMContentLoaded', function() {
         const data = Object.fromEntries(formData.entries());
         
         try {
-            // Send email using EmailJS
-            const result = await sendContactFormEmail(data);
+            // Prepare template parameters
+            const templateParams = {
+                from_name: `${data.first_name} ${data.last_name}`,
+                from_email: data.email,
+                phone: data.phone || 'Not provided',
+                company: data.company || 'Not provided',
+                job_title: data.job_title || 'Not provided',
+                inquiry_type: data.inquiry_type,
+                message: data.additional_info || 'No additional information',
+                referral_source: data.referral_source || 'Not specified',
+                date: new Date().toLocaleString(),
+                page_url: window.location.href
+            };
             
-            if (result.success) {
-                // Show success message
-                alert('Thank you for your submission! We will get back to you within 2-3 business days.');
-                
-                // Reset form
-                this.reset();
-                inquiryOptions.forEach(opt => opt.classList.remove('selected'));
-                masterclassFields.classList.remove('active');
-                thinktankFields.classList.remove('active');
-                collaborateFields.classList.remove('active');
-            } else {
-                // Show error message
-                alert(result.message || 'There was an error sending your submission. Please try again.');
+            // Add conditional fields based on inquiry type
+            if (data.inquiry_type === 'masterclass') {
+                templateParams.class_title = data.class_title || '';
+                templateParams.class_description = data.class_description || '';
+                templateParams.class_duration = data.class_duration || 'Not specified';
+                templateParams.class_format = data.class_format || 'Not specified';
+                templateParams.expertise = data.expertise || 'Not provided';
+            } else if (data.inquiry_type === 'thinktank') {
+                templateParams.project_name = data.project_name || '';
+                templateParams.project_description = data.project_description || '';
+                templateParams.project_stage = data.project_stage || 'Not specified';
+                templateParams.feedback_areas = data.feedback_areas || 'Not specified';
+            } else if (data.inquiry_type === 'collaborate') {
+                templateParams.event_type = data.event_type || '';
+                templateParams.event_description = data.event_description || '';
+                templateParams.proposed_date = data.proposed_date || 'Not specified';
+                templateParams.expected_attendees = data.expected_attendees || 'Not specified';
+                templateParams.sponsorship = data.sponsorship || 'Not specified';
             }
+            
+            // Send email using EmailJS
+            await emailjs.send(
+                'service_z3s1i63',
+                'contact_form_template',
+                templateParams
+            );
+            
+            // Show success message
+            alert('Thank you for your submission! We will get back to you within 2-3 business days.');
+            
+            // Reset form
+            this.reset();
+            inquiryOptions.forEach(opt => opt.classList.remove('selected'));
+            masterclassFields.classList.remove('active');
+            thinktankFields.classList.remove('active');
+            collaborateFields.classList.remove('active');
         } catch (error) {
             console.error('Form submission error:', error);
             alert('There was an error sending your submission. Please try again or contact us directly.');
