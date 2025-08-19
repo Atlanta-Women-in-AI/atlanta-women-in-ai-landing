@@ -33,17 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     position: fixed;
                     top: 0;
                     left: 0;
+                    right: 0;
+                    bottom: 0;
                     width: 100%;
                     height: 100%;
                     background: rgba(0, 0, 0, 0.5);
                     z-index: 10000;
                     animation: fadeIn 0.3s ease;
+                    overflow: auto;
+                    -webkit-overflow-scrolling: touch;
                 }
                 
                 .newsletter-popup-overlay.show {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    display: block;
                 }
                 
                 .newsletter-popup {
@@ -52,9 +54,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     padding: 40px;
                     max-width: 500px;
                     width: 90%;
-                    position: relative;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
                     animation: slideUp 0.3s ease;
+                    margin: 20px auto;
                 }
                 
                 .popup-close {
@@ -160,11 +168,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 @keyframes slideUp {
                     from {
-                        transform: translateY(20px);
+                        transform: translate(-50%, calc(-50% + 20px));
+                        -webkit-transform: translate(-50%, calc(-50% + 20px));
                         opacity: 0;
                     }
                     to {
-                        transform: translateY(0);
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
                         opacity: 1;
                     }
                 }
@@ -172,6 +182,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 @media (max-width: 600px) {
                     .newsletter-popup {
                         padding: 30px 20px;
+                        width: 95%;
+                        max-width: calc(100% - 20px);
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
                     }
                     
                     .popup-email-form {
@@ -180,6 +194,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     .popup-email-submit {
                         width: 100%;
+                    }
+                }
+                
+                /* Android-specific fixes */
+                @supports (-webkit-overflow-scrolling: touch) {
+                    .newsletter-popup {
+                        position: fixed;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
                     }
                 }
             </style>
