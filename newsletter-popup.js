@@ -181,11 +181,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 @media (max-width: 600px) {
                     .newsletter-popup {
-                        padding: 30px 20px;
+                        padding: 50px 20px 30px 20px;
                         width: 95%;
                         max-width: calc(100% - 20px);
                         transform: translate(-50%, -50%);
                         -webkit-transform: translate(-50%, -50%);
+                    }
+                    
+                    .popup-close {
+                        top: 10px;
+                        right: 10px;
+                        font-size: 24px;
+                        z-index: 10;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    
+                    .popup-content h2 {
+                        font-size: 20px;
+                        margin-top: 10px;
+                    }
+                    
+                    .popup-content h3 {
+                        font-size: 18px;
                     }
                     
                     .popup-email-form {
