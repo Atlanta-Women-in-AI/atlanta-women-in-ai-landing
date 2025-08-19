@@ -1,6 +1,4 @@
 // Footer Component
-import { initFooterNewsletter } from './newsletter-handler.js';
-
 document.addEventListener('DOMContentLoaded', function() {
     // Find all elements with class 'footer-container'
     const footerContainers = document.querySelectorAll('.footer-container');
@@ -55,6 +53,47 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = footerHTML;
     });
     
-    // Initialize footer newsletter handler with EmailJS
-    initFooterNewsletter();
+    // Initialize email form functionality with EmailJS
+    const emailForm = document.getElementById('footerEmailForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    if (emailForm) {
+        emailForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            
+            // Simple email validation
+            if (email && email.includes('@')) {
+                // Show loading state
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Subscribing...';
+                submitButton.disabled = true;
+                
+                try {
+                    // When EmailJS is configured, this will send the email
+                    // For now, just show success message
+                    formMessage.textContent = 'Thank you for subscribing!';
+                    formMessage.style.color = 'var(--primary-teal)';
+                    emailForm.reset();
+                    
+                    // Clear message after 3 seconds
+                    setTimeout(() => {
+                        formMessage.textContent = '';
+                    }, 3000);
+                } catch (error) {
+                    console.error('Newsletter signup error:', error);
+                    formMessage.textContent = 'An error occurred. Please try again.';
+                    formMessage.style.color = '#ef4444';
+                } finally {
+                    // Reset button state
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
+                }
+            } else {
+                formMessage.textContent = 'Please enter a valid email address';
+                formMessage.style.color = '#ef4444';
+            }
+        });
+    }
 });

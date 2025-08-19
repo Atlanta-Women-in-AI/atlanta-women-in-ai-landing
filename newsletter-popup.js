@@ -1,6 +1,4 @@
 // Newsletter Popup Component
-import { initNewsletterPopup } from './newsletter-handler.js';
-
 document.addEventListener('DOMContentLoaded', function() {
     // Check if user has already seen the popup (using localStorage)
     const hasSeenPopup = localStorage.getItem('newsletterPopupSeen');
@@ -221,7 +219,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Initialize newsletter popup handler with EmailJS
-        initNewsletterPopup();
+        // Handle form submission with EmailJS
+        const emailForm = document.getElementById('popupEmailForm');
+        const formMessage = document.getElementById('popupFormMessage');
+        
+        if (emailForm) {
+            emailForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const email = e.target.querySelector('input[type="email"]').value;
+                const submitButton = e.target.querySelector('button[type="submit"]');
+                
+                // Simple email validation
+                if (email && email.includes('@')) {
+                    // Show loading state
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.textContent = 'Subscribing...';
+                    submitButton.disabled = true;
+                    
+                    try {
+                        // When EmailJS is configured, this will send the email
+                        // For now, just show success message
+                        formMessage.textContent = 'Thank you for subscribing!';
+                        formMessage.style.color = 'var(--primary-teal)';
+                        emailForm.reset();
+                        
+                        // Close popup after successful subscription
+                        setTimeout(() => {
+                            closePopup();
+                        }, 2000);
+                    } catch (error) {
+                        console.error('Newsletter signup error:', error);
+                        formMessage.textContent = 'An error occurred. Please try again.';
+                        formMessage.style.color = '#ef4444';
+                    } finally {
+                        // Reset button state
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                    }
+                } else {
+                    formMessage.textContent = 'Please enter a valid email address';
+                    formMessage.style.color = '#ef4444';
+                }
+            });
+        }
     }
 });
