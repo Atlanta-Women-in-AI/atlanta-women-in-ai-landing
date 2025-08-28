@@ -241,8 +241,9 @@ function initCountdown() {
     const countdown = document.getElementById('countdown');
     if (!countdown) return;
 
-    // Set event date (August 20, 2025)
-    const eventDate = new Date(2025, 7, 20, 18, 0, 0); // August 20, 2025, 6:00 PM
+    // Set event date (September 17, 2025)
+    // Note: JavaScript Date uses local timezone, so this needs to be adjusted for EDT
+    const eventDate = new Date('2025-09-17T18:00:00-04:00'); // September 17, 2025, 6:00 PM EDT
 
     function updateCountdown() {
         const now = new Date().getTime();
