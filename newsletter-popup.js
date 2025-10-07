@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>Sign Up for Our Newsletter</h3>
                         <p>Get AI insights and updates delivered straight to your inbox</p>
                         <form class="popup-email-form" id="popupEmailForm">
-                            <input type="text" name="firstName" placeholder="First Name" required class="popup-name-input">
-                            <input type="text" name="lastName" placeholder="Last Name" required class="popup-name-input">
+                            <div class="popup-name-row">
+                                <input type="text" name="firstName" placeholder="First Name" required class="popup-name-input">
+                                <input type="text" name="lastName" placeholder="Last Name" required class="popup-name-input">
+                            </div>
                             <input type="email" name="email" placeholder="Email Address" required class="popup-email-input">
                             <button type="submit" class="popup-email-submit">Subscribe</button>
                         </form>
@@ -110,6 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     flex-direction: column;
                     gap: 10px;
                     margin-bottom: 15px;
+                }
+
+                .popup-name-row {
+                    display: flex;
+                    gap: 10px;
                 }
 
                 .popup-name-input,
@@ -212,6 +219,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     .popup-content h3 {
                         font-size: 18px;
+                    }
+
+                    .popup-name-row {
+                        flex-direction: column;
                     }
 
                     .popup-email-submit {
