@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initFormHandlers();
     initNetwork();
+    initHeroCarousel();
 });
 
 // Navigation functionality
@@ -286,17 +287,20 @@ function initTestimonials() {
     const testimonialCard = document.querySelector('.testimonial-card');
     const dots = document.querySelectorAll('.dot');
 
+    // Exit early if testimonial elements don't exist on this page
+    if (!testimonialCard || !dots.length) return;
+
     function showTestimonial(index) {
         testimonialCard.classList.remove('active');
-        
+
         setTimeout(() => {
             const testimonial = testimonials[index];
             testimonialCard.querySelector('.testimonial-text').textContent = testimonial.text;
             testimonialCard.querySelector('.author-info h4').textContent = testimonial.author;
             testimonialCard.querySelector('.author-info span').textContent = testimonial.role;
-            
+
             testimonialCard.classList.add('active');
-            
+
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
@@ -418,9 +422,13 @@ document.head.appendChild(style);
 function initNetwork() {
     const container = document.querySelector('.network-container');
     if (!container) return;
-    
+
     const svg = container.querySelector('.network-svg');
+    if (!svg) return;
+
     const linesGroup = svg.querySelector('.network-lines');
+    if (!linesGroup) return;
+
     const nodes = container.querySelectorAll('.network-node');
     
     // Define connections - ensuring every node is connected
@@ -642,23 +650,158 @@ const formMessage = document.getElementById('formMessage');
 if (emailForm) {
     emailForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+
         const emailInput = this.querySelector('.email-input');
         const email = emailInput.value;
-        
+
         // Show success message
         formMessage.textContent = 'Thank you for subscribing! Check your inbox soon.';
         formMessage.className = 'form-message success';
-        
+
         // Clear form
         emailInput.value = '';
-        
+
         // Hide message after 5 seconds
         setTimeout(() => {
             formMessage.className = 'form-message';
         }, 5000);
-        
+
         // Here you would normally send the email to your backend
         console.log('Email submitted:', email);
     });
+}
+
+// Hero Carousel
+function initHeroCarousel() {
+    const track = document.getElementById('heroCarouselTrack');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const indicatorsContainer = document.getElementById('carouselIndicators');
+
+    console.log('Carousel elements:', { track, prevBtn, nextBtn, indicatorsContainer });
+
+    if (!track || !prevBtn || !nextBtn || !indicatorsContainer) {
+        console.error('Carousel elements not found');
+        return;
+    }
+
+    const slides = track.querySelectorAll('.carousel-slide');
+    const slideCount = slides.length;
+    console.log('Found slides:', slideCount);
+
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    // Create indicators
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.classList.add('carousel-indicator');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+
+    function updateCarousel(smooth = true) {
+        const offset = -currentIndex * 100;
+        track.style.transition = smooth ? 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+        track.style.transform = `translateX(${offset}%)`;
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+        resetAutoplay();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        console.log('Next slide, current index:', currentIndex);
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+        console.log('Prev slide, current index:', currentIndex);
+        updateCarousel();
+    }
+
+    function startAutoplay() {
+        console.log('Starting autoplay');
+        autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    // Event listeners
+    prevBtn.addEventListener('click', () => {
+        console.log('Prev button clicked');
+        prevSlide();
+        resetAutoplay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        console.log('Next button clicked');
+        nextSlide();
+        resetAutoplay();
+    });
+
+    // Pause autoplay on hover
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    });
+
+    track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetAutoplay();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetAutoplay();
+        }
+    });
+
+    // Start autoplay
+    startAutoplay();
 }

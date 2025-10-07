@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3>Sign Up for Our Newsletter</h3>
                         <p>Get AI insights and updates delivered straight to your inbox</p>
                         <form class="popup-email-form" id="popupEmailForm">
-                            <input type="email" placeholder="Enter your email" required class="popup-email-input">
+                            <input type="text" name="firstName" placeholder="First Name" required class="popup-name-input">
+                            <input type="text" name="lastName" placeholder="Last Name" required class="popup-name-input">
+                            <input type="email" name="email" placeholder="Email Address" required class="popup-email-input">
                             <button type="submit" class="popup-email-submit">Subscribe</button>
                         </form>
                         <span class="popup-form-message" id="popupFormMessage"></span>
@@ -105,19 +107,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 .popup-email-form {
                     display: flex;
+                    flex-direction: column;
                     gap: 10px;
                     margin-bottom: 15px;
                 }
-                
+
+                .popup-name-input,
                 .popup-email-input {
-                    flex: 1;
+                    width: 100%;
                     padding: 12px 15px;
                     border: 1px solid #ddd;
                     border-radius: 6px;
                     font-size: 14px;
                     transition: border-color 0.2s;
                 }
-                
+
+                .popup-name-input:focus,
                 .popup-email-input:focus {
                     outline: none;
                     border-color: var(--primary-teal, #28a99e);
@@ -208,11 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     .popup-content h3 {
                         font-size: 18px;
                     }
-                    
-                    .popup-email-form {
-                        flex-direction: column;
-                    }
-                    
+
                     .popup-email-submit {
                         width: 100%;
                     }
@@ -270,50 +271,61 @@ document.addEventListener('DOMContentLoaded', function() {
         if (emailForm) {
             emailForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                const email = e.target.querySelector('input[type="email"]').value;
+                const firstName = e.target.querySelector('input[name="firstName"]').value;
+                const lastName = e.target.querySelector('input[name="lastName"]').value;
+                const email = e.target.querySelector('input[name="email"]').value;
                 const submitButton = e.target.querySelector('button[type="submit"]');
-                
-                // Simple email validation
-                if (email && email.includes('@')) {
-                    // Show loading state
-                    const originalButtonText = submitButton.textContent;
-                    submitButton.textContent = 'Subscribing...';
-                    submitButton.disabled = true;
-                    
-                    try {
-                        // Send email using EmailJS
-                        const templateParams = {
-                            subscriber_email: email,
-                            signup_date: new Date().toLocaleString(),
-                            signup_source: window.location.pathname
-                        };
-                        
-                        await emailjs.send(
-                            'service_z3s1i63',
-                            'newsletter_template',
-                            templateParams
-                        );
-                        
-                        formMessage.textContent = 'Thank you for subscribing!';
-                        formMessage.style.color = 'var(--primary-teal)';
-                        emailForm.reset();
-                        
-                        // Close popup after successful subscription
-                        setTimeout(() => {
-                            closePopup();
-                        }, 2000);
-                    } catch (error) {
-                        console.error('Newsletter signup error:', error);
-                        formMessage.textContent = 'An error occurred. Please try again.';
-                        formMessage.style.color = '#ef4444';
-                    } finally {
-                        // Reset button state
-                        submitButton.textContent = originalButtonText;
-                        submitButton.disabled = false;
-                    }
-                } else {
+
+                // Validation
+                if (!firstName.trim() || !lastName.trim()) {
+                    formMessage.textContent = 'Please enter your first and last name';
+                    formMessage.style.color = '#ef4444';
+                    return;
+                }
+
+                if (!email || !email.includes('@')) {
                     formMessage.textContent = 'Please enter a valid email address';
                     formMessage.style.color = '#ef4444';
+                    return;
+                }
+
+                // Show loading state
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Subscribing...';
+                submitButton.disabled = true;
+
+                try {
+                    // Send email using EmailJS
+                    const templateParams = {
+                        first_name: firstName,
+                        last_name: lastName,
+                        subscriber_email: email,
+                        signup_date: new Date().toLocaleString(),
+                        signup_source: window.location.pathname
+                    };
+
+                    await emailjs.send(
+                        'service_z3s1i63',
+                        'newsletter_template',
+                        templateParams
+                    );
+
+                    formMessage.textContent = `Thank you for subscribing, ${firstName}!`;
+                    formMessage.style.color = 'var(--primary-teal)';
+                    emailForm.reset();
+
+                    // Close popup after successful subscription
+                    setTimeout(() => {
+                        closePopup();
+                    }, 2000);
+                } catch (error) {
+                    console.error('Newsletter signup error:', error);
+                    formMessage.textContent = 'An error occurred. Please try again.';
+                    formMessage.style.color = '#ef4444';
+                } finally {
+                    // Reset button state
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
                 }
             });
         }
