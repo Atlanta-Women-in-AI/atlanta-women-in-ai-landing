@@ -1186,8 +1186,9 @@ section {
 }
 
 .initiatives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -1200,6 +1201,9 @@ section {
     align-items: center;
     text-align: center;
     min-height: 380px;
+    flex: 0 1 calc(33.333% - 1.5rem);
+    min-width: 300px;
+    max-width: 380px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
     border: 1px solid rgba(78, 205, 196, 0.2);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
@@ -2176,8 +2180,12 @@ section {
 
     /* Initiative cards mobile layout */
     .initiatives-grid {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    .initiatives-grid .initiative-card {
+        flex: 0 1 100%;
+        max-width: 100%;
     }
 
     /* Mission box mobile */
@@ -2486,7 +2494,7 @@ section {
 }
 
 .footer-signup {
-    flex: 1;
+    flex: 0 0 320px;
     background: linear-gradient(135deg, rgba(78, 205, 196, 0.08), rgba(107, 70, 193, 0.04));
     border-radius: 15px;
     padding: 2rem;
@@ -2496,6 +2504,52 @@ section {
 .footer-socials {
     flex: 0 0 auto;
     text-align: center;
+}
+
+.footer-support {
+    flex: 0 0 320px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.08), rgba(78, 205, 196, 0.04));
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.footer-support h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.footer-support p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.donation-links {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.donate-btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.donate-btn:hover {
+    background: var(--primary-teal);
+    border-color: var(--primary-teal);
+    transform: translateY(-2px);
 }
 
 .footer-signup h4 {
@@ -2513,16 +2567,48 @@ section {
 
 .email-form {
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
     position: relative;
 }
 
-.email-input {
+.name-fields {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.name-input {
     flex: 1;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.name-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.email-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.email-input {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 0.85rem;
     background: rgba(255, 255, 255, 0.1);
     color: white;
     transition: all 0.3s ease;
@@ -2613,12 +2699,30 @@ section {
     .footer-socials {
         width: 100%;
     }
-    
-    .email-form {
+
+    .footer-support {
+        width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .footer-signup {
+        flex: 1 1 auto;
+    }
+
+    .name-fields {
         flex-direction: column;
     }
-    
-    .email-input {
+
+    .email-row {
+        flex-direction: column;
+    }
+
+    .email-input,
+    .name-input {
+        width: 100%;
+    }
+
+    .email-submit {
         width: 100%;
     }
 }

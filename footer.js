@@ -13,8 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4>Sign Up for Our Newsletter</h4>
                         <p>Insights delivered to your inbox</p>
                         <form class="email-form" id="footerEmailForm">
-                            <input type="email" placeholder="Enter your email" required class="email-input">
-                            <button type="submit" class="email-submit">Subscribe</button>
+                            <div class="name-fields">
+                                <input type="text" placeholder="First name" required class="name-input" id="firstName">
+                                <input type="text" placeholder="Last name" required class="name-input" id="lastName">
+                            </div>
+                            <div class="email-row">
+                                <input type="email" placeholder="Email address" required class="email-input">
+                                <button type="submit" class="email-submit">Subscribe</button>
+                            </div>
                         </form>
                         <span class="form-message" id="formMessage"></span>
                     </div>
@@ -40,6 +46,17 @@ document.addEventListener('DOMContentLoaded', function() {
                             </a>
                         </div>
                     </div>
+
+                    <!-- Support Section -->
+                    <div class="footer-support">
+                        <h4>Support Our Mission</h4>
+                        <p>Help us empower women in AI</p>
+                        <div class="donation-links">
+                            <a href="https://buy.stripe.com/6oU7sDexGgP58gjd9AbII01" target="_blank" class="donate-btn">$25</a>
+                            <a href="https://buy.stripe.com/bJe6oz89i0Q7aor5H8bII02" target="_blank" class="donate-btn">$50</a>
+                            <a href="https://buy.stripe.com/9B65kv2OYdCTdAD6LcbII03" target="_blank" class="donate-btn">$100</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="footer-bottom">
                     <p>&copy; 2025 Atlanta Women in AI. All rights reserved.</p>
@@ -60,19 +77,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (emailForm) {
         emailForm.addEventListener('submit', async function(e) {
             e.preventDefault();
+            const firstName = e.target.querySelector('#firstName').value;
+            const lastName = e.target.querySelector('#lastName').value;
             const email = e.target.querySelector('input[type="email"]').value;
             const submitButton = e.target.querySelector('button[type="submit"]');
-            
+
             // Simple email validation
-            if (email && email.includes('@')) {
+            if (email && email.includes('@') && firstName && lastName) {
                 // Show loading state
                 const originalButtonText = submitButton.textContent;
                 submitButton.textContent = 'Subscribing...';
                 submitButton.disabled = true;
-                
+
                 try {
                     // Send email using EmailJS
                     const templateParams = {
+                        subscriber_first_name: firstName,
+                        subscriber_last_name: lastName,
                         subscriber_email: email,
                         signup_date: new Date().toLocaleString(),
                         signup_source: window.location.pathname
