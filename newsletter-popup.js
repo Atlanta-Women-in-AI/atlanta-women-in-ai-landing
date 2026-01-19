@@ -1,8 +1,13 @@
 // Newsletter Popup Component
 document.addEventListener('DOMContentLoaded', function() {
+    // Mailchimp configuration
+    const MAILCHIMP_URL = 'https://atlantawomeninai.us6.list-manage.com/subscribe/post';
+    const MAILCHIMP_U = '802832c8307deccc53f442372';
+    const MAILCHIMP_ID = '303927fc3a';
+
     // Check if user has already seen the popup (using localStorage)
     const hasSeenPopup = localStorage.getItem('newsletterPopupSeen');
-    
+
     // Only show popup if user hasn't seen it before
     if (!hasSeenPopup) {
         // Create popup HTML
@@ -14,15 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h2>Welcome to Atlanta Women in AI!</h2>
                         <h3>Sign Up for Our Newsletter</h3>
                         <p>Get AI insights and updates delivered straight to your inbox</p>
-                        <form class="popup-email-form" id="popupEmailForm">
+                        <form class="popup-email-form" id="popupEmailForm" action="${MAILCHIMP_URL}" method="POST" target="popup-mailchimp-response">
+                            <input type="hidden" name="u" value="${MAILCHIMP_U}">
+                            <input type="hidden" name="id" value="${MAILCHIMP_ID}">
                             <div class="popup-name-row">
-                                <input type="text" name="firstName" placeholder="First Name" required class="popup-name-input">
-                                <input type="text" name="lastName" placeholder="Last Name" required class="popup-name-input">
+                                <input type="text" name="FNAME" placeholder="First Name" required class="popup-name-input">
+                                <input type="text" name="LNAME" placeholder="Last Name" required class="popup-name-input">
                             </div>
-                            <input type="email" name="email" placeholder="Email Address" required class="popup-email-input">
+                            <input type="email" name="EMAIL" placeholder="Email Address" required class="popup-email-input">
                             <button type="submit" class="popup-email-submit">Subscribe</button>
+                            <!-- Honeypot field for spam protection -->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_802832c8307deccc53f442372_303927fc3a" tabindex="-1" value="">
+                            </div>
                         </form>
                         <span class="popup-form-message" id="popupFormMessage"></span>
+                        <iframe name="popup-mailchimp-response" style="display:none;"></iframe>
                         <button class="popup-skip" id="popup-skip">Maybe Later</button>
                     </div>
                 </div>
@@ -275,26 +287,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Handle form submission with EmailJS
+        // Handle form submission with Mailchimp
         const emailForm = document.getElementById('popupEmailForm');
         const formMessage = document.getElementById('popupFormMessage');
-        
+
         if (emailForm) {
-            emailForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const firstName = e.target.querySelector('input[name="firstName"]').value;
-                const lastName = e.target.querySelector('input[name="lastName"]').value;
-                const email = e.target.querySelector('input[name="email"]').value;
+            emailForm.addEventListener('submit', function(e) {
+                const firstName = e.target.querySelector('input[name="FNAME"]').value.trim();
+                const lastName = e.target.querySelector('input[name="LNAME"]').value.trim();
+                const email = e.target.querySelector('input[name="EMAIL"]').value.trim();
                 const submitButton = e.target.querySelector('button[type="submit"]');
 
                 // Validation
-                if (!firstName.trim() || !lastName.trim()) {
+                if (!firstName || !lastName) {
+                    e.preventDefault();
                     formMessage.textContent = 'Please enter your first and last name';
                     formMessage.style.color = '#ef4444';
                     return;
                 }
 
                 if (!email || !email.includes('@')) {
+                    e.preventDefault();
                     formMessage.textContent = 'Please enter a valid email address';
                     formMessage.style.color = '#ef4444';
                     return;
@@ -305,39 +318,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.textContent = 'Subscribing...';
                 submitButton.disabled = true;
 
-                try {
-                    // Send email using EmailJS
-                    const templateParams = {
-                        first_name: firstName,
-                        last_name: lastName,
-                        subscriber_email: email,
-                        signup_date: new Date().toLocaleString(),
-                        signup_source: window.location.pathname
-                    };
-
-                    await emailjs.send(
-                        'service_z3s1i63',
-                        'newsletter_template',
-                        templateParams
-                    );
-
+                // Show success message after short delay (form submits to hidden iframe)
+                setTimeout(() => {
                     formMessage.textContent = `Thank you for subscribing, ${firstName}!`;
                     formMessage.style.color = 'var(--primary-teal)';
                     emailForm.reset();
+                    submitButton.textContent = originalButtonText;
+                    submitButton.disabled = false;
 
                     // Close popup after successful subscription
                     setTimeout(() => {
                         closePopup();
                     }, 2000);
-                } catch (error) {
-                    console.error('Newsletter signup error:', error);
-                    formMessage.textContent = 'An error occurred. Please try again.';
-                    formMessage.style.color = '#ef4444';
-                } finally {
-                    // Reset button state
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                }
+                }, 1000);
             });
         }
     }
