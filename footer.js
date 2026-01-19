@@ -2,7 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Find all elements with class 'footer-container'
     const footerContainers = document.querySelectorAll('.footer-container');
-    
+
+    // Mailchimp configuration
+    const MAILCHIMP_URL = 'https://atlantawomeninai.us6.list-manage.com/subscribe/post';
+    const MAILCHIMP_U = '802832c8307deccc53f442372';
+    const MAILCHIMP_ID = '303927fc3a';
+
     // Footer HTML template
     const footerHTML = `
         <footer class="footer">
@@ -12,17 +17,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer-signup">
                         <h4>Sign Up for Our Newsletter</h4>
                         <p>Insights delivered to your inbox</p>
-                        <form class="email-form" id="footerEmailForm">
+                        <form class="email-form" id="footerEmailForm" action="${MAILCHIMP_URL}" method="POST" target="mailchimp-response">
+                            <input type="hidden" name="u" value="${MAILCHIMP_U}">
+                            <input type="hidden" name="id" value="${MAILCHIMP_ID}">
                             <div class="name-fields">
-                                <input type="text" placeholder="First name" required class="name-input" id="firstName">
-                                <input type="text" placeholder="Last name" required class="name-input" id="lastName">
+                                <input type="text" placeholder="First name" required class="name-input" id="firstName" name="FNAME">
+                                <input type="text" placeholder="Last name" required class="name-input" id="lastName" name="LNAME">
                             </div>
                             <div class="email-row">
-                                <input type="email" placeholder="Email address" required class="email-input">
+                                <input type="email" placeholder="Email address" required class="email-input" id="emailAddress" name="EMAIL">
                                 <button type="submit" class="email-submit">Subscribe</button>
+                            </div>
+                            <!-- Honeypot field for spam protection -->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="b_802832c8307deccc53f442372_303927fc3a" tabindex="-1" value="">
                             </div>
                         </form>
                         <span class="form-message" id="formMessage"></span>
+                        <iframe name="mailchimp-response" style="display:none;"></iframe>
                     </div>
                     
                     <!-- Social Links Section -->
@@ -70,62 +82,43 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = footerHTML;
     });
     
-    // Initialize email form functionality with EmailJS
+    // Initialize email form functionality with Mailchimp
     const emailForm = document.getElementById('footerEmailForm');
     const formMessage = document.getElementById('formMessage');
-    
+
     if (emailForm) {
-        emailForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const firstName = e.target.querySelector('#firstName').value;
-            const lastName = e.target.querySelector('#lastName').value;
-            const email = e.target.querySelector('input[type="email"]').value;
+        emailForm.addEventListener('submit', function(e) {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('emailAddress').value.trim();
             const submitButton = e.target.querySelector('button[type="submit"]');
 
-            // Simple email validation
-            if (email && email.includes('@') && firstName && lastName) {
-                // Show loading state
-                const originalButtonText = submitButton.textContent;
-                submitButton.textContent = 'Subscribing...';
-                submitButton.disabled = true;
-
-                try {
-                    // Send email using EmailJS
-                    const templateParams = {
-                        subscriber_first_name: firstName,
-                        subscriber_last_name: lastName,
-                        subscriber_email: email,
-                        signup_date: new Date().toLocaleString(),
-                        signup_source: window.location.pathname
-                    };
-                    
-                    await emailjs.send(
-                        'service_z3s1i63',
-                        'newsletter_template',
-                        templateParams
-                    );
-                    
-                    formMessage.textContent = 'Thank you for subscribing!';
-                    formMessage.style.color = 'var(--primary-teal)';
-                    emailForm.reset();
-                    
-                    // Clear message after 3 seconds
-                    setTimeout(() => {
-                        formMessage.textContent = '';
-                    }, 3000);
-                } catch (error) {
-                    console.error('Newsletter signup error:', error);
-                    formMessage.textContent = 'An error occurred. Please try again.';
-                    formMessage.style.color = '#ef4444';
-                } finally {
-                    // Reset button state
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                }
-            } else {
-                formMessage.textContent = 'Please enter a valid email address';
+            // Validation
+            if (!email || !email.includes('@') || !firstName || !lastName) {
+                e.preventDefault();
+                formMessage.textContent = 'Please fill in all fields with a valid email';
                 formMessage.style.color = '#ef4444';
+                return;
             }
+
+            // Show loading state
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Subscribing...';
+            submitButton.disabled = true;
+
+            // Show success message after short delay (form submits to hidden iframe)
+            setTimeout(() => {
+                formMessage.textContent = 'Thank you for subscribing!';
+                formMessage.style.color = 'var(--primary-teal)';
+                emailForm.reset();
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+
+                // Clear message after 5 seconds
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                }, 5000);
+            }, 1000);
         });
     }
 });
