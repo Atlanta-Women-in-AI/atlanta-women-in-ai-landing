@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 Atlanta Women in AI. All rights reserved.</p>
+                    <p>&copy; 2026 Atlanta Women in AI. All rights reserved.</p>
                 </div>
             </div>
         </footer>
