@@ -346,23 +346,23 @@ function initSmoothScroll() {
 // Form handlers
 function initFormHandlers() {
     const newsletterForm = document.querySelector('.newsletter-form');
-    
+
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const email = this.querySelector('input[type="email"]').value;
             const button = this.querySelector('button');
             const originalText = button.textContent;
-            
+
             // Simulate form submission
             button.textContent = 'Subscribing...';
             button.disabled = true;
-            
+
             setTimeout(() => {
                 button.textContent = 'Subscribed!';
                 button.style.background = 'var(--gradient-warm)';
-                
+
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.disabled = false;
@@ -370,6 +370,48 @@ function initFormHandlers() {
                     this.reset();
                 }, 2000);
             }, 1500);
+        });
+    }
+
+    // Join Newsletter Form (in Ready to Join section)
+    const joinNewsletterForm = document.getElementById('joinNewsletterForm');
+    const joinFormMessage = document.getElementById('joinFormMessage');
+
+    if (joinNewsletterForm) {
+        joinNewsletterForm.addEventListener('submit', function(e) {
+            const firstName = this.querySelector('input[name="FNAME"]').value.trim();
+            const lastName = this.querySelector('input[name="LNAME"]').value.trim();
+            const email = this.querySelector('input[name="EMAIL"]').value.trim();
+            const submitButton = this.querySelector('button[type="submit"]');
+
+            // Validation
+            if (!firstName || !lastName) {
+                e.preventDefault();
+                joinFormMessage.textContent = 'Please enter your first and last name';
+                joinFormMessage.style.color = '#ef4444';
+                return;
+            }
+
+            if (!email || !email.includes('@')) {
+                e.preventDefault();
+                joinFormMessage.textContent = 'Please enter a valid email address';
+                joinFormMessage.style.color = '#ef4444';
+                return;
+            }
+
+            // Show loading state
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Subscribing...';
+            submitButton.disabled = true;
+
+            // Show success message after short delay (form submits to hidden iframe)
+            setTimeout(() => {
+                joinFormMessage.textContent = `Thank you for subscribing, ${firstName}!`;
+                joinFormMessage.style.color = 'var(--primary-teal)';
+                joinNewsletterForm.reset();
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }, 1000);
         });
     }
 }
