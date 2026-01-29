@@ -20,7 +20,7 @@ importantNotes:
     text: "Bring your laptop and your own custom GPTs to share with the group."
 time: "12:00 PM - 1:30 PM EST"
 location: Improving
-address: "11675 Rainwater Drive, Suite 100<br>Alpharetta, GA 30009"
+address: "11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009"
 ticketPrice: "$10.00"
 ticketNote: Bring Your Own Lunch - Beverages provided
 registrationLink: https://www.eventbrite.com/e/atlanta-women-in-ai-stop-prompting-and-start-building-custom-gpts-tickets-1537924496569

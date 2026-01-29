@@ -35,7 +35,7 @@ importantNotes:
     text: Our meetings are now Bring Your Own Lunch. We are providing beverages. Tickets remain $10.00.
 time: "12:00 PM - 1:30 PM EST"
 location: Improving
-address: "11675 Rainwater Drive, Suite 100<br>Alpharetta, GA 30009"
+address: "11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009"
 ticketPrice: "$10.00"
 ticketNote: Bring Your Own Lunch - Beverages provided
 registrationLink: https://beckyberrycoach.ticketspice.com/atlanta-women-in-ai-january-2026-meeting
