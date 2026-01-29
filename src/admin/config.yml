@@ -20,7 +20,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Event Type", name: "eventType", widget: "string", hint: "e.g., Workshop, Panel Discussion, Networking" }
       - { label: "Badge", name: "badge", widget: "select", options: ["UPCOMING EVENT", "PAST EVENT"], default: "UPCOMING EVENT" }
-      - { label: "URL Slug", name: "permalink", widget: "string", hint: "e.g., /event-january-2026.html" }
+      - { label: "URL Slug", name: "permalink", widget: "string", hint: "e.g., /event-february-2026.html (must end with .html)", pattern: ['.*\.html$', "URL must end with .html"] }
 
       # Content
       - { label: "Headline", name: "headline", widget: "string", hint: "A short, catchy tagline. Example: 'Reconnect with the Truth of Your Experiences' or 'Level up with CustomGPTs!'" }
