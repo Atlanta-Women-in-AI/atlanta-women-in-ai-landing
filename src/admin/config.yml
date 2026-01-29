@@ -89,6 +89,48 @@ collections:
   - name: "settings"
     label: "Site Settings"
     files:
+      - name: "hero"
+        label: "Hero Section"
+        file: "src/_data/hero.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "object"
+            hint: "The main headline (3 lines)"
+            fields:
+              - { label: "Line 1", name: "line1", widget: "string", hint: "Example: 'Amplifying'" }
+              - { label: "Line 2 (Gradient)", name: "line2", widget: "string", hint: "Example: 'Women's Voices' - this line has the gradient color effect" }
+              - { label: "Line 3", name: "line3", widget: "string", hint: "Example: 'in AI'" }
+          - { label: "Subtitle", name: "subtitle", widget: "text", hint: "The paragraph below the title. Example: 'Join Atlanta's premier community of women leading the AI revolution...'" }
+          - label: "Highlight Words"
+            name: "highlights"
+            widget: "list"
+            hint: "Words in the subtitle that get highlighted (displayed with special styling)"
+            field: { label: "Word", name: "word", widget: "string" }
+          - label: "Buttons"
+            name: "buttons"
+            widget: "object"
+            fields:
+              - label: "Primary Button"
+                name: "primary"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string", hint: "Example: 'Join Us'" }
+                  - { label: "URL", name: "url", widget: "string", hint: "Example: '#join'" }
+              - label: "Secondary Button"
+                name: "secondary"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string", hint: "Example: 'Next Event'" }
+                  - { label: "URL", name: "url", widget: "string", hint: "Example: '#events'" }
+          - label: "Carousel Images"
+            name: "carouselImages"
+            widget: "list"
+            hint: "Photos that rotate in the hero background"
+            fields:
+              - { label: "Image", name: "src", widget: "image", hint: "Upload or select an image" }
+              - { label: "Alt Text", name: "alt", widget: "string", hint: "Description for accessibility. Example: 'Atlanta Women in AI Event'" }
+
       - name: "whyJoin"
         label: "Why Join Us Section"
         file: "src/_data/whyJoin.json"

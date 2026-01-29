@@ -47,27 +47,11 @@
         <div class="hero-carousel">
             <div class="carousel-container">
                 <div class="carousel-track" id="heroCarouselTrack">
+                    {% for image in hero.carouselImages %}
                     <div class="carousel-slide">
-                        <img src="images/IMG_2925.jpeg" alt="Atlanta Women in AI Event">
+                        <img src="{{ image.src }}" alt="{{ image.alt }}">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="images/IMG_2934.jpeg" alt="Atlanta Women in AI Event">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/IMG_2785.jpeg" alt="Atlanta Women in AI Event">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/IMG_7909.jpeg" alt="Atlanta Women in AI Event">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/IMG_2749.jpeg" alt="Atlanta Women in AI Event">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/IMG_2647.jpeg" alt="Atlanta Women in AI Event">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="images/IMG_2435.jpeg" alt="Atlanta Women in AI Event">
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -87,19 +71,20 @@
 
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="title-line">Amplifying</span>
-                <span class="title-line gradient-text">Women's Voices</span>
-                <span class="title-line">in AI</span>
+                <span class="title-line">{{ hero.title.line1 }}</span>
+                <span class="title-line gradient-text">{{ hero.title.line2 }}</span>
+                <span class="title-line">{{ hero.title.line3 }}</span>
             </h1>
             <p class="hero-subtitle">
-                Join Atlanta's premier community of women leading the AI revolution through
-                <span class="highlight">community</span>,
-                <span class="highlight">empowerment</span>, and
-                <span class="highlight">leadership</span>.
+                {% set subtitleText = hero.subtitle %}
+                {% for word in hero.highlights %}
+                    {% set subtitleText = subtitleText | replace(word, '<span class="highlight">' + word + '</span>') %}
+                {% endfor %}
+                {{ subtitleText | safe }}
             </p>
             <div class="hero-cta-group">
-                <a href="#join" class="btn btn-primary btn-glow">Join Us</a>
-                <a href="#events" class="btn btn-secondary">Next Event</a>
+                <a href="{{ hero.buttons.primary.url }}" class="btn btn-primary btn-glow">{{ hero.buttons.primary.text }}</a>
+                <a href="{{ hero.buttons.secondary.url }}" class="btn btn-secondary">{{ hero.buttons.secondary.text }}</a>
             </div>
         </div>
         <div class="scroll-indicator">

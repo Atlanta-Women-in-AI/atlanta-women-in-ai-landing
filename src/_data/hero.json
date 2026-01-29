@@ -1,0 +1,28 @@
+{
+  "title": {
+    "line1": "Amplifying",
+    "line2": "Women's Voices",
+    "line3": "in AI"
+  },
+  "subtitle": "Join Atlanta's premier community of women leading the AI revolution through community, empowerment, and leadership.",
+  "highlights": ["community", "empowerment", "leadership"],
+  "buttons": {
+    "primary": {
+      "text": "Join Us",
+      "url": "#join"
+    },
+    "secondary": {
+      "text": "Next Event",
+      "url": "#events"
+    }
+  },
+  "carouselImages": [
+    { "src": "/images/IMG_2925.jpeg", "alt": "Atlanta Women in AI Event" },
+    { "src": "/images/IMG_2934.jpeg", "alt": "Atlanta Women in AI Event" },
+    { "src": "/images/IMG_2785.jpeg", "alt": "Atlanta Women in AI Event" },
+    { "src": "/images/IMG_7909.jpeg", "alt": "Atlanta Women in AI Event" },
+    { "src": "/images/IMG_2749.jpeg", "alt": "Atlanta Women in AI Event" },
+    { "src": "/images/IMG_2647.jpeg", "alt": "Atlanta Women in AI Event" },
+    { "src": "/images/IMG_2435.jpeg", "alt": "Atlanta Women in AI Event" }
+  ]
+}
