@@ -1,0 +1,81 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "src/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "event.njk" }
+
+      # Basic Info
+      - { label: "Event Title", name: "title", widget: "string", hint: "e.g., Disarming Imposter Syndrome" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Event Type", name: "eventType", widget: "string", hint: "e.g., Workshop, Panel Discussion, Networking" }
+      - { label: "Badge", name: "badge", widget: "select", options: ["UPCOMING EVENT", "PAST EVENT"], default: "UPCOMING EVENT" }
+      - { label: "URL Slug", name: "permalink", widget: "string", hint: "e.g., /event-january-2026.html" }
+
+      # Content
+      - { label: "Headline", name: "headline", widget: "string", hint: "Main headline shown on the page" }
+      - { label: "Lead Text", name: "leadText", widget: "text", hint: "Opening paragraph (shown in larger text)" }
+      - { label: "Short Description", name: "shortDescription", widget: "string", hint: "Brief summary for event cards (1-2 sentences)", required: false }
+      - { label: "Description", name: "description", widget: "text", hint: "Main description paragraph" }
+      - { label: "What to Expect", name: "whatToExpect", widget: "text", required: false }
+
+      # Takeaways
+      - label: "Key Takeaways"
+        name: "takeaways"
+        widget: "list"
+        required: false
+        field: { label: "Takeaway", name: "takeaway", widget: "string" }
+
+      # Speaker
+      - { label: "Speaker Name", name: "speakerName", widget: "string", required: false }
+      - { label: "Speaker Bio", name: "speakerBio", widget: "text", required: false, hint: "Bio text (starts after their name)" }
+
+      # Agenda
+      - label: "Agenda"
+        name: "agenda"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Time", name: "time", widget: "string", hint: "e.g., 12:00 PM - 12:20 PM" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - label: "Bullet Points"
+            name: "bullets"
+            widget: "list"
+            required: false
+            field: { label: "Bullet", name: "bullet", widget: "string" }
+
+      # Important Notes
+      - label: "Important Notes"
+        name: "importantNotes"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Note Title", name: "title", widget: "string" }
+          - { label: "Note Text", name: "text", widget: "text" }
+
+      # Logistics
+      - { label: "Time", name: "time", widget: "string", hint: "e.g., 12:00 PM - 1:30 PM EST" }
+      - { label: "Location Name", name: "location", widget: "string", hint: "Venue name" }
+      - { label: "Address", name: "address", widget: "string", hint: "Full address (use <br> for line breaks)" }
+      - { label: "Ticket Price", name: "ticketPrice", widget: "string", hint: "e.g., $10.00" }
+      - { label: "Ticket Note", name: "ticketNote", widget: "string", required: false, hint: "e.g., Bring Your Own Lunch - Beverages provided" }
+      - { label: "Registration Link", name: "registrationLink", widget: "string" }
+
+      # Sponsors
+      - { label: "Founding Sponsors", name: "foundingSponsors", widget: "string", required: false }
+      - { label: "Meeting Sponsor", name: "meetingSponsor", widget: "string", required: false }
+
+      # CTA Section
+      - { label: "CTA Title", name: "ctaTitle", widget: "string", required: false, hint: "e.g., Ready to Join Us?" }
+      - { label: "CTA Description", name: "ctaDescription", widget: "text", required: false }
+      - { label: "Why Attend (Sidebar)", name: "whyAttend", widget: "text", required: false }
