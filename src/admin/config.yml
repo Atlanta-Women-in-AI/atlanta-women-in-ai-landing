@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Atlanta-Women-in-AI/atlanta-women-in-ai-landing
   branch: main
 
 media_folder: "src/images"
