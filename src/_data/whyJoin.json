@@ -1,0 +1,71 @@
+{
+  "sectionTitle": "Why Join Us",
+  "sectionSubtitle": "Discover the benefits of being part of our thriving community",
+  "cards": [
+    {
+      "icon": "people",
+      "title": "Monthly Meetings",
+      "description": "Connect in-person every 3rd Wednesday",
+      "bullets": [
+        "Alpharetta location",
+        "Noon - 1:30pm",
+        "Lunch included ($10)",
+        "Expert speakers & workshops"
+      ],
+      "buttonText": "Register Now",
+      "buttonLink": "https://www.eventbrite.com/e/atlanta-women-in-ai-x-thrive-nexus-community-mingle-tickets-1636523037459"
+    },
+    {
+      "icon": "tools",
+      "title": "Workshops",
+      "description": "Hands-on AI learning sessions",
+      "bullets": [
+        "Practical skills",
+        "Expert-led sessions",
+        "Interactive format",
+        "Real-world applications"
+      ],
+      "buttonText": "View Workshops",
+      "buttonLink": "index.html#events"
+    },
+    {
+      "icon": "target",
+      "title": "Think Tank",
+      "description": "Get feedback on your AI projects",
+      "bullets": [
+        "30-min brainstorming",
+        "Reciprocal feedback",
+        "Project acceleration",
+        "Peer expertise"
+      ],
+      "buttonText": "Join Session",
+      "buttonLink": "contact.html"
+    },
+    {
+      "icon": "bell",
+      "title": "One Shots",
+      "description": "Quarterly networking events",
+      "bullets": [
+        "Connect with community",
+        "Build relationships",
+        "Informal atmosphere",
+        "Meaningful conversations"
+      ],
+      "buttonText": "View Events",
+      "buttonLink": "index.html#events"
+    },
+    {
+      "icon": "compass",
+      "title": "Event Collaborations",
+      "description": "Partner for workshops & networking",
+      "bullets": [
+        "Happy hours",
+        "Book clubs",
+        "Cross-promotion",
+        "Speaking opportunities"
+      ],
+      "buttonText": "Partner With Us",
+      "buttonLink": "contact.html"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "year": "2026",
+  "months": [
+    {
+      "month": "Jan",
+      "day": "21",
+      "dayOfWeek": "Wednesday",
+      "time": "Noon - 1:30p",
+      "type": "lunch"
+    },
+    {
+      "month": "Feb",
+      "day": "19",
+      "dayOfWeek": "Thursday",
+      "time": "6:30p - 8p",
+      "type": "evening"
+    },
+    {
+      "month": "Mar",
+      "day": "18",
+      "dayOfWeek": "Wednesday",
+      "time": "Noon - 1:30p",
+      "type": "lunch"
+    },
+    {
+      "month": "Apr",
+      "day": "16",
+      "dayOfWeek": "Thursday",
+      "time": "6:30p - 8p",
+      "type": "evening"
+    },
+    {
+      "month": "May",
+      "day": "20",
+      "dayOfWeek": "Wednesday",
+      "time": "Noon - 1:30p",
+      "type": "lunch"
+    },
+    {
+      "month": "Jun",
+      "day": "18",
+      "dayOfWeek": "Thursday",
+      "time": "6:30p - 8p",
+      "type": "evening"
+    },
+    {
+      "month": "Jul",
+      "day": "",
+      "dayOfWeek": "No Meeting",
+      "time": "Summer Break",
+      "type": "none"
+    },
+    {
+      "month": "Aug",
+      "day": "19",
+      "dayOfWeek": "Wednesday",
+      "time": "Noon - 1:30p",
+      "type": "lunch"
+    },
+    {
+      "month": "Sep",
+      "day": "17",
+      "dayOfWeek": "Thursday",
+      "time": "6:30p - 8p",
+      "type": "evening"
+    },
+    {
+      "month": "Oct",
+      "day": "21",
+      "dayOfWeek": "Wednesday",
+      "time": "Noon - 1:30p",
+      "type": "lunch"
+    },
+    {
+      "month": "Nov",
+      "day": "12",
+      "dayOfWeek": "Thursday",
+      "time": "6:30p - 8p",
+      "type": "evening",
+      "special": true
+    },
+    {
+      "month": "Dec",
+      "day": "",
+      "dayOfWeek": "No Meeting",
+      "time": "Holiday Break",
+      "type": "none"
+    }
+  ]
+}

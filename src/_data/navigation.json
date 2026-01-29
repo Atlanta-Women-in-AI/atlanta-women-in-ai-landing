@@ -1,0 +1,18 @@
+{
+  "logo": {
+    "text": "Atlanta Women in AI",
+    "image": "/logo.png"
+  },
+  "links": [
+    { "label": "Home", "url": "#home", "homeUrl": "/" },
+    { "label": "About", "url": "#about", "homeUrl": "/#about" },
+    { "label": "Events", "url": "#events", "homeUrl": "/#events" },
+    { "label": "Why Join", "url": "#why-join", "homeUrl": "/#why-join" },
+    { "label": "Contact", "url": "/contact/", "homeUrl": "/contact/" }
+  ],
+  "cta": {
+    "label": "Join Us",
+    "url": "#join",
+    "homeUrl": "/#join"
+  }
+}

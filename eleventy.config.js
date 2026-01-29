@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("script.js");
   eleventyConfig.addPassthroughCopy("footer.js");
+  eleventyConfig.addPassthroughCopy("src/footer-form.js");
   eleventyConfig.addPassthroughCopy("newsletter-popup.js");
   eleventyConfig.addPassthroughCopy("contact-form-handler.js");
   eleventyConfig.addPassthroughCopy("logo.png");
