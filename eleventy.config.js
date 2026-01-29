@@ -7,7 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("contact-form-handler.js");
   eleventyConfig.addPassthroughCopy("logo.png");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("src/admin/*.yml");
 
   // Events collection - all events sorted by date
   eleventyConfig.addCollection("events", function(collectionApi) {
