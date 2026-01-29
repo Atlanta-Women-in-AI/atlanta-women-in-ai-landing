@@ -4,8 +4,9 @@
   "description": "Atlanta Women in AI - Empowering Women in Artificial Intelligence",
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js"
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve"
   },
   "keywords": [
     "women in tech",
@@ -17,5 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "@emailjs/browser": "^4.4.1"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
   }
 }
