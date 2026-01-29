@@ -36,7 +36,7 @@ importantNotes:
     text: "1 hour 30 minutes, in-person event, free parking, refunds available up to 7 days before event."
 time: "12:00 PM - 1:30 PM EST"
 location: Improving
-address: "11675 Rainwater Drive, Suite 100<br>Alpharetta, GA 30009"
+address: "11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009"
 ticketPrice: "$10.00"
 ticketNote: A ChatGPT PLUS subscription is required for hands-on portion
 registrationLink: https://www.eventbrite.com/e/atlanta-women-in-ai-october-meeting-tickets-1743997235679
