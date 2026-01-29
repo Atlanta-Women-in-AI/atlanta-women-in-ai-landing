@@ -5,7 +5,7 @@ title: "From Ethics to Infrastructure: How AI Governance Is Taking Shape
 date: 2026-02-19
 eventType: Presentation
 badge: UPCOMING EVENT
-permalink: /event-february-2026
+permalink: /event-february-2026.html
 headline: "From Ethics to Infrastructure: How AI Governance Is Taking Shape
   Globally and Impacts Everyone"
 leadText: In this timely presentation, Eunjeong Kim will talk about AI
