@@ -197,7 +197,7 @@
                             <span>{{ nextEvent.data.time }}</span>
                         </div>
                     </div>
-                    <p class="event-description">{{ nextEvent.data.description }}</p>
+                    <p class="event-description">{{ nextEvent.data.shortDescription or nextEvent.data.leadText or (nextEvent.data.description | truncate(150)) }}</p>
                     <a href="{{ nextEvent.url }}" class="btn btn-small" style="margin-top: 1rem;">View Details</a>
                 </div>
 

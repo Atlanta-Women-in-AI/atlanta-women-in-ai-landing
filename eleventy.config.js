@@ -1,4 +1,13 @@
+const markdownIt = require("markdown-it");
+const md = markdownIt({ html: true, breaks: true });
+
 module.exports = function(eleventyConfig) {
+  // Markdown filter for rendering markdown content
+  eleventyConfig.addFilter("markdown", (content) => {
+    if (!content) return '';
+    return md.render(content);
+  });
+
   // Pass through static assets
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("script.js");

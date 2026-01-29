@@ -229,7 +229,7 @@
 
                 <p class="lead">{{ leadText }}</p>
 
-                <p style="margin-top: 1.5rem;">{{ description }}</p>
+                <div style="margin-top: 1.5rem;">{{ description | markdown | safe }}</div>
 
                 {% if whatToExpect %}
                 <div style="margin-top: 2rem;">

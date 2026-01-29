@@ -20,13 +20,13 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Event Type", name: "eventType", widget: "string", hint: "e.g., Workshop, Panel Discussion, Networking" }
       - { label: "Badge", name: "badge", widget: "select", options: ["UPCOMING EVENT", "PAST EVENT"], default: "UPCOMING EVENT" }
-      - { label: "URL Slug", name: "permalink", widget: "string", hint: "e.g., /event-january-2026.html" }
+      - { label: "URL Slug", name: "permalink", widget: "string", hint: "e.g., /event-february-2026.html (must end with .html)", pattern: ['.*\.html$', "URL must end with .html"] }
 
       # Content
       - { label: "Headline", name: "headline", widget: "string", hint: "Main headline shown on the page" }
       - { label: "Lead Text", name: "leadText", widget: "text", hint: "Opening paragraph (shown in larger text)" }
       - { label: "Short Description", name: "shortDescription", widget: "string", hint: "Brief summary for event cards (1-2 sentences)", required: false }
-      - { label: "Description", name: "description", widget: "text", hint: "Main description paragraph" }
+      - { label: "Description", name: "description", widget: "markdown", hint: "Main description - supports formatting (bold, lists, paragraphs)" }
       - { label: "What to Expect", name: "whatToExpect", widget: "text", required: false }
 
       # Takeaways
