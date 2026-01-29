@@ -1,0 +1,22 @@
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="{% if isHome %}#home{% else %}/{% endif %}" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <img src="{{ navigation.logo.image }}" alt="{{ navigation.logo.text }}" class="logo-img">
+                <span class="logo-text">{{ navigation.logo.text }}</span>
+            </a>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            {% for link in navigation.links %}
+            <a href="{% if isHome %}{{ link.url }}{% else %}{{ link.homeUrl }}{% endif %}" class="nav-link{% if activeNav == link.label %} active{% endif %}">{{ link.label }}</a>
+            {% endfor %}
+            <a href="{% if isHome %}{{ navigation.cta.url }}{% else %}{{ navigation.cta.homeUrl }}{% endif %}" class="nav-link nav-cta">{{ navigation.cta.label }}</a>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="nav-progress" id="navProgress"></div>
+</nav>

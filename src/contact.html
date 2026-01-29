@@ -7,7 +7,7 @@
     <title>Contact - Atlanta Women in AI</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="{{ navigation.logo.image }}">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <style>
         .contact-hero {
             background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(44, 62, 80, 0.05));
@@ -159,30 +159,9 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                    <img src="logo.png" alt="Atlanta Women in AI" class="logo-img">
-                    <span class="logo-text">Atlanta Women in AI</span>
-                </a>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#why-join" class="nav-link">Why Join</a>
-                <a href="index.html#events" class="nav-link">Events</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
-                <a href="index.html#join" class="nav-link nav-cta">Join Us</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <div class="nav-progress" id="navProgress"></div>
-    </nav>
+    {% set isHome = false %}
+    {% set activeNav = "Contact" %}
+    {% include "nav.njk" %}
 
     <!-- Contact Hero -->
     <section class="contact-hero">
@@ -389,11 +368,10 @@
     </section>
 
     <!-- Footer -->
-    <!-- Footer -->
-    <div class="footer-container"></div>
+    {% include "footer.njk" %}
 
     <!-- Scripts -->
-    <script src="footer.js"></script>
+    <script src="/footer-form.js"></script>
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -403,8 +381,8 @@
         })();
     </script>
     <!-- Contact Form Handler -->
-    <script src="contact-form-handler.js"></script>
+    <script src="/contact-form-handler.js"></script>
     <!-- Newsletter Popup -->
-    <script src="newsletter-popup.js"></script>
+    <script src="/newsletter-popup.js"></script>
 </body>
 </html>

@@ -23,36 +23,39 @@ collections:
       - { label: "URL Slug", name: "permalink", widget: "string", hint: "e.g., /event-february-2026.html (must end with .html)", pattern: ['.*\.html$', "URL must end with .html"] }
 
       # Content
-      - { label: "Headline", name: "headline", widget: "string", hint: "Main headline shown on the page" }
-      - { label: "Lead Text", name: "leadText", widget: "text", hint: "Opening paragraph (shown in larger text)" }
-      - { label: "Short Description", name: "shortDescription", widget: "string", hint: "Brief summary for event cards (1-2 sentences)", required: false }
-      - { label: "Description", name: "description", widget: "markdown", hint: "Main description - supports formatting (bold, lists, paragraphs)" }
-      - { label: "What to Expect", name: "whatToExpect", widget: "text", required: false }
+      - { label: "Headline", name: "headline", widget: "string", hint: "A short, catchy tagline. Example: 'Reconnect with the Truth of Your Experiences' or 'Level up with CustomGPTs!'" }
+      - { label: "Lead Text", name: "leadText", widget: "text", hint: "1-2 sentences that hook the reader. Example: 'We'll start 2026 by standing determinedly on the foundation we've already built and focusing on strengthening it even more.'" }
+      - { label: "Short Description", name: "shortDescription", widget: "string", hint: "One sentence for the homepage preview. Example: 'Explore the real roots of imposter syndrome with Becky Berry.'", required: false }
+      - { label: "Description", name: "description", widget: "markdown", hint: "Full event description. Example: 'Join us for a powerful session led by Becky Berry, where we'll explore the real roots of imposter syndrome and learn how to disarm it by reconnecting with the truth of our experiences.'" }
+      - { label: "What to Expect", name: "whatToExpect", widget: "text", required: false, hint: "What attendees will experience. Example: 'Expect a lively, affirming conversation packed with tools to reinforce your leadership from the inside out.'" }
 
       # Takeaways
       - label: "Key Takeaways"
         name: "takeaways"
         widget: "list"
         required: false
+        hint: "Bullet points of what attendees will gain. Examples: 'New language to reframe self-doubt', 'Practical reflection tools', 'Hands-on experience with AI tools'"
         field: { label: "Takeaway", name: "takeaway", widget: "string" }
 
       # Speaker
-      - { label: "Speaker Name", name: "speakerName", widget: "string", required: false }
-      - { label: "Speaker Bio", name: "speakerBio", widget: "text", required: false, hint: "Bio text (starts after their name)" }
+      - { label: "Speaker Name", name: "speakerName", widget: "string", required: false, hint: "Example: 'Becky Berry' or 'Erika Robinson and Tiffany Whitener'" }
+      - { label: "Speaker Bio", name: "speakerBio", widget: "text", required: false, hint: "Starts after their name on the page. Example: 'is the cofounder of Atlanta Women in AI. She's a coach for progressives weary of being marginalized and determined to lead on their own terms.'" }
 
       # Agenda
       - label: "Agenda"
         name: "agenda"
         widget: "list"
         required: false
+        hint: "Schedule of the event broken into time blocks"
         fields:
-          - { label: "Time", name: "time", widget: "string", hint: "e.g., 12:00 PM - 12:20 PM" }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Time", name: "time", widget: "string", hint: "Example: '12:00 PM - 12:20 PM'" }
+          - { label: "Title", name: "title", widget: "string", hint: "Example: 'Check-in and Mingling' or 'Hands-on Session'" }
+          - { label: "Description", name: "description", widget: "text", required: false, hint: "Example: 'Arrive, check in, and network with fellow attendees.'" }
           - label: "Bullet Points"
             name: "bullets"
             widget: "list"
             required: false
+            hint: "Optional sub-points for this agenda item"
             field: { label: "Bullet", name: "bullet", widget: "string" }
 
       # Important Notes
@@ -60,23 +63,165 @@ collections:
         name: "importantNotes"
         widget: "list"
         required: false
+        hint: "Special instructions or reminders for attendees"
         fields:
-          - { label: "Note Title", name: "title", widget: "string" }
-          - { label: "Note Text", name: "text", widget: "text" }
+          - { label: "Note Title", name: "title", widget: "string", hint: "Example: 'What to Bring' or 'Important Note: Bring Your Own Lunch'" }
+          - { label: "Note Text", name: "text", widget: "text", hint: "Example: 'Your laptop, your curiosity and enthusiasm, and a ChatGPT PLUS subscription ($20/month).'" }
 
       # Logistics
       - { label: "Time", name: "time", widget: "string", hint: "e.g., 12:00 PM - 1:30 PM EST" }
       - { label: "Location Name", name: "location", widget: "string", hint: "Venue name" }
-      - { label: "Address", name: "address", widget: "string", hint: "Full address (use <br> for line breaks)" }
+      - { label: "Address", name: "address", widget: "string", hint: "Full address. Example: '11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009'" }
       - { label: "Ticket Price", name: "ticketPrice", widget: "string", hint: "e.g., $10.00" }
       - { label: "Ticket Note", name: "ticketNote", widget: "string", required: false, hint: "e.g., Bring Your Own Lunch - Beverages provided" }
       - { label: "Registration Link", name: "registrationLink", widget: "string" }
 
       # Sponsors
-      - { label: "Founding Sponsors", name: "foundingSponsors", widget: "string", required: false }
-      - { label: "Meeting Sponsor", name: "meetingSponsor", widget: "string", required: false }
+      - { label: "Founding Sponsors", name: "foundingSponsors", widget: "string", required: false, hint: "Example: 'Becky Berry Career Coaching and Yeh & Johnson Technology Consulting'" }
+      - { label: "Meeting Sponsor", name: "meetingSponsor", widget: "string", required: false, hint: "The venue or company hosting this specific event. Example: 'Improving'" }
 
-      # CTA Section
-      - { label: "CTA Title", name: "ctaTitle", widget: "string", required: false, hint: "e.g., Ready to Join Us?" }
-      - { label: "CTA Description", name: "ctaDescription", widget: "text", required: false }
-      - { label: "Why Attend (Sidebar)", name: "whyAttend", widget: "text", required: false }
+      # CTA Section (Call-to-Action - the section that encourages people to register)
+      - { label: "CTA Title", name: "ctaTitle", widget: "string", required: false, hint: "Encouraging headline above the register button. Example: 'Ready to Disarm Imposter Syndrome?' or 'Ready to Build Your Own Custom GPTs?'" }
+      - { label: "CTA Description", name: "ctaDescription", widget: "text", required: false, hint: "Text below the CTA title. Example: 'Join us for a powerful session that will help you lead with unshakable confidence!' For past events: 'This event has passed. Check out our upcoming events!'" }
+      - { label: "Why Attend (Sidebar)", name: "whyAttend", widget: "text", required: false, hint: "Short text for the sidebar. Example: 'Gain practical tools to disarm imposter syndrome, connect with other women in AI, and leave with unshakable confidence!'" }
+
+  # Site Settings (data files)
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "whyJoin"
+        label: "Why Join Us Section"
+        file: "src/_data/whyJoin.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string", hint: "Example: 'Why Join Us'" }
+          - { label: "Section Subtitle", name: "sectionSubtitle", widget: "string", hint: "Example: 'Discover the benefits of being part of our thriving community'" }
+          - label: "Cards"
+            name: "cards"
+            widget: "list"
+            hint: "The benefit cards displayed in this section"
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["people", "tools", "target", "bell", "compass", "lightbulb", "heart", "star"], hint: "Choose an icon for this card" }
+              - { label: "Title", name: "title", widget: "string", hint: "Example: 'Monthly Meetings' or 'Workshops'" }
+              - { label: "Description", name: "description", widget: "string", hint: "Example: 'Connect in-person every 3rd Wednesday'" }
+              - label: "Bullet Points"
+                name: "bullets"
+                widget: "list"
+                hint: "List of benefits (4 recommended)"
+                field: { label: "Bullet", name: "bullet", widget: "string" }
+              - { label: "Button Text", name: "buttonText", widget: "string", hint: "Example: 'Register Now' or 'View Events'" }
+              - { label: "Button Link", name: "buttonLink", widget: "string", hint: "URL or page link. Example: 'contact.html' or 'https://eventbrite.com/...'" }
+
+      - name: "readyToJoin"
+        label: "Ready to Join Section"
+        file: "src/_data/readyToJoin.json"
+        fields:
+          - { label: "Section Title", name: "sectionTitle", widget: "string", hint: "Example: 'Ready to Join?'" }
+          - { label: "Section Subtitle", name: "sectionSubtitle", widget: "string", hint: "Example: 'Choose your path to get involved'" }
+          - label: "Cards"
+            name: "cards"
+            widget: "list"
+            hint: "The join option cards (4 recommended)"
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["chat", "calendar", "email", "people-plus", "star", "heart", "link"], hint: "Choose an icon" }
+              - { label: "Title", name: "title", widget: "string", hint: "Example: 'WhatsApp Community' or 'Attend Next Meeting'" }
+              - { label: "Description", name: "description", widget: "string", hint: "Example: 'Join 50+ members in daily discussions, resource sharing, and real-time support.'" }
+              - { label: "Button Text", name: "buttonText", widget: "string", hint: "Example: 'Join WhatsApp' or 'Register Now'" }
+              - { label: "Button Link", name: "buttonLink", widget: "string", required: false, hint: "URL for the button. Leave empty for Newsletter card." }
+              - { label: "Featured?", name: "featured", widget: "boolean", default: false, hint: "Check to highlight this card (glowing button)" }
+              - { label: "Card Type", name: "type", widget: "select", options: ["link", "newsletter"], default: "link", hint: "'link' = button with URL, 'newsletter' = shows email signup form" }
+          - label: "Mailchimp Settings"
+            name: "mailchimp"
+            widget: "object"
+            hint: "Settings for the newsletter signup form"
+            fields:
+              - { label: "Form Action URL", name: "formAction", widget: "string", hint: "Mailchimp form action URL" }
+              - { label: "User ID", name: "userId", widget: "string", hint: "Mailchimp user ID (u parameter)" }
+              - { label: "List ID", name: "listId", widget: "string", hint: "Mailchimp list ID (id parameter)" }
+
+      - name: "navigation"
+        label: "Header Navigation"
+        file: "src/_data/navigation.json"
+        fields:
+          - label: "Logo"
+            name: "logo"
+            widget: "object"
+            fields:
+              - { label: "Logo Text", name: "text", widget: "string", hint: "Example: 'Atlanta Women in AI'" }
+              - { label: "Logo Image", name: "image", widget: "string", hint: "Path to logo image. Example: '/logo.png'" }
+          - label: "Navigation Links"
+            name: "links"
+            widget: "list"
+            hint: "Main navigation links (excluding the CTA button)"
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "Link text. Example: 'Home', 'About', 'Events'" }
+              - { label: "URL (Homepage)", name: "url", widget: "string", hint: "URL when on homepage. Example: '#about' for section links" }
+              - { label: "URL (Other Pages)", name: "homeUrl", widget: "string", hint: "URL when on other pages. Example: '/#about' or '/contact/'" }
+          - label: "CTA Button"
+            name: "cta"
+            widget: "object"
+            hint: "The highlighted call-to-action button"
+            fields:
+              - { label: "Label", name: "label", widget: "string", hint: "Example: 'Join Us'" }
+              - { label: "URL (Homepage)", name: "url", widget: "string", hint: "Example: '#join'" }
+              - { label: "URL (Other Pages)", name: "homeUrl", widget: "string", hint: "Example: '/#join'" }
+
+      - name: "footer"
+        label: "Footer"
+        file: "src/_data/footer.json"
+        fields:
+          - label: "Newsletter Section"
+            name: "newsletter"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", hint: "Example: 'Sign Up for Our Newsletter'" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", hint: "Example: 'Insights delivered to your inbox'" }
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Name", name: "name", widget: "string", hint: "Example: 'Atlanta Women in AI'" }
+              - { label: "Copyright Text", name: "copyright", widget: "string", hint: "Example: '2026 Atlanta Women in AI. All rights reserved.'" }
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "list"
+            hint: "Social media links"
+            fields:
+              - { label: "Name", name: "name", widget: "string", hint: "Example: 'LinkedIn', 'WhatsApp'" }
+              - { label: "URL", name: "url", widget: "string", hint: "Full URL to the social page" }
+              - { label: "Icon", name: "icon", widget: "select", options: ["linkedin", "whatsapp", "eventbrite"], hint: "Choose an icon" }
+          - label: "Donations Section"
+            name: "donations"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", hint: "Example: 'Support Our Mission'" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", hint: "Example: 'Help us empower women in AI'" }
+              - label: "Donation Amounts"
+                name: "amounts"
+                widget: "list"
+                fields:
+                  - { label: "Amount", name: "amount", widget: "string", hint: "Example: '$25'" }
+                  - { label: "Stripe Link", name: "url", widget: "string", hint: "Stripe payment link URL" }
+          - label: "Mailchimp Settings"
+            name: "mailchimp"
+            widget: "object"
+            fields:
+              - { label: "Form Action URL", name: "formAction", widget: "string" }
+              - { label: "User ID", name: "userId", widget: "string" }
+              - { label: "List ID", name: "listId", widget: "string" }
+
+      - name: "schedule"
+        label: "Meeting Schedule"
+        file: "src/_data/schedule.json"
+        fields:
+          - { label: "Year", name: "year", widget: "string", hint: "Example: '2026'" }
+          - label: "Months"
+            name: "months"
+            widget: "list"
+            hint: "All 12 months of the year"
+            fields:
+              - { label: "Month", name: "month", widget: "string", hint: "Three-letter abbreviation. Example: 'Jan', 'Feb', 'Mar'" }
+              - { label: "Day", name: "day", widget: "string", hint: "Day number. Example: '21'. Leave empty for no meeting." }
+              - { label: "Day of Week", name: "dayOfWeek", widget: "string", hint: "Example: 'Wednesday', 'Thursday', or 'No Meeting'" }
+              - { label: "Time", name: "time", widget: "string", hint: "Example: 'Noon - 1:30p', '6:30p - 8p', or 'Summer Break'" }
+              - { label: "Type", name: "type", widget: "select", options: ["lunch", "evening", "none"], hint: "lunch = teal color, evening = purple color, none = gray (no meeting)" }
+              - { label: "Special Date?", name: "special", widget: "boolean", default: false, required: false, hint: "Check this to show a 'SPECIAL DATE' badge" }

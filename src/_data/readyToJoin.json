@@ -1,0 +1,46 @@
+{
+  "sectionTitle": "Ready to Join?",
+  "sectionSubtitle": "Choose your path to get involved",
+  "cards": [
+    {
+      "icon": "chat",
+      "title": "WhatsApp Community",
+      "description": "Join 50+ members in daily discussions, resource sharing, and real-time support.",
+      "buttonText": "Join WhatsApp",
+      "buttonLink": "https://chat.whatsapp.com/L1mKOvGOpjdCDaNP8WdmkV",
+      "featured": false,
+      "type": "link"
+    },
+    {
+      "icon": "calendar",
+      "title": "Attend Next Meeting",
+      "description": "Experience our community firsthand at our next meeting in Alpharetta.",
+      "buttonText": "Register Now",
+      "buttonLink": "https://beckyberrycoach.ticketspice.com/atlanta-women-in-ai-january-2026-meeting",
+      "featured": true,
+      "type": "link"
+    },
+    {
+      "icon": "email",
+      "title": "Newsletter",
+      "description": "Get AI insights and community updates delivered to your inbox.",
+      "buttonText": "Subscribe",
+      "featured": false,
+      "type": "newsletter"
+    },
+    {
+      "icon": "people-plus",
+      "title": "Collaborate",
+      "description": "Partner with us for events, workshops, or share your expertise with our community.",
+      "buttonText": "Get in Touch",
+      "buttonLink": "contact.html",
+      "featured": false,
+      "type": "link"
+    }
+  ],
+  "mailchimp": {
+    "formAction": "https://atlantawomeninai.us6.list-manage.com/subscribe/post",
+    "userId": "802832c8307deccc53f442372",
+    "listId": "303927fc3a"
+  }
+}
