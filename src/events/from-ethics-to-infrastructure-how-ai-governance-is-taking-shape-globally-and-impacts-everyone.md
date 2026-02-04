@@ -31,7 +31,7 @@ description: >-
 
   A practical look at how AI governance affects everyday decisions, leadership, and product development, and how professionals can engage with AI responsibly.
 speakerName: Eunjeong Kim
-time: 6:30 PM - 8:30 PM
+time: 6:30 PM - 8:00 PM
 location: Improving
 address: 11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009
 ticketPrice: $10.00
