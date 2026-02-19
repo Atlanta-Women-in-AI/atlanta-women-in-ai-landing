@@ -590,6 +590,14 @@ section {
     color: var(--text-secondary);
 }
 
+.lead p {
+    margin-bottom: 0.5rem;
+}
+
+.lead p:last-child {
+    margin-bottom: 0;
+}
+
 .mission-box {
     padding: 2rem;
     margin-bottom: 2rem;

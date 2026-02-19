@@ -103,6 +103,12 @@ module.exports = function(eleventyConfig) {
     return d.getFullYear();
   });
 
+  // Convert newlines to <br> tags so CMS line breaks render on the page
+  eleventyConfig.addFilter("nl2br", (str) => {
+    if (!str) return '';
+    return str.replace(/\n/g, '<br>');
+  });
+
   // Truncate text
   eleventyConfig.addFilter("truncate", (str, length) => {
     if (!str) return '';

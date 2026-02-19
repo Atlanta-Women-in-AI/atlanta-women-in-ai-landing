@@ -193,6 +193,7 @@
     }
 
     .event-description-content ul {
+        margin-top: 1rem;
         margin-bottom: 1.5rem;
     }
 
@@ -242,14 +243,14 @@
 
                 <div style="margin-bottom: 2rem;"></div>
 
-                <p class="lead">{{ leadText }}</p>
+                <div class="lead">{{ leadText | markdown | safe }}</div>
 
                 <div class="event-description-content" style="margin-top: 1.5rem;">{{ description | markdown | safe }}</div>
 
                 {% if whatToExpect %}
                 <div style="margin-top: 2rem;">
                     <h3 style="margin-bottom: 1rem;">What to Expect</h3>
-                    <p>{{ whatToExpect }}</p>
+                    <p>{{ whatToExpect | nl2br | safe }}</p>
                 </div>
                 {% endif %}
 
