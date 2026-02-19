@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve"
+    "start": "npx @11ty/eleventy --serve",
+    "cms": "npx decap-server",
+    "dev:cms": "npx decap-server & npx @11ty/eleventy --serve"
   },
   "keywords": [
     "women in tech",
@@ -21,6 +23,7 @@
     "markdown-it": "^14.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "decap-server": "^3.5.0"
   }
 }

@@ -187,6 +187,15 @@
         margin-bottom: 1rem;
     }
 
+    .event-description-content p + p strong:first-child {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .event-description-content ul {
+        margin-bottom: 1.5rem;
+    }
+
     @media (max-width: 968px) {
         .event-main {
             grid-template-columns: 1fr;
@@ -225,11 +234,17 @@
             <div class="event-body">
                 <h2>{{ headline }}</h2>
 
+                {% if bannerImage %}
+                <div style="margin: 2rem 0;">
+                    <img src="{{ bannerImage }}" alt="{{ title }}" style="width: 100%; border-radius: 15px;">
+                </div>
+                {% endif %}
+
                 <div style="margin-bottom: 2rem;"></div>
 
                 <p class="lead">{{ leadText }}</p>
 
-                <div style="margin-top: 1.5rem;">{{ description | markdown | safe }}</div>
+                <div class="event-description-content" style="margin-top: 1.5rem;">{{ description | markdown | safe }}</div>
 
                 {% if whatToExpect %}
                 <div style="margin-top: 2rem;">
@@ -249,7 +264,17 @@
                 </div>
                 {% endif %}
 
-                {% if speakerName %}
+                {% if speakers %}
+                <div class="speaker-section">
+                    <h3>About the Workshop Leaders</h3>
+                    {% for speaker in speakers %}
+                    <div style="margin-bottom: 1.5rem;">
+                        <p><strong>{{ speaker.name }}</strong> — {{ speaker.org }}</p>
+                        <p style="color: var(--text-secondary);">{{ speaker.bio }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% elif speakerName %}
                 <div class="speaker-section">
                     <h3>About the Speaker</h3>
                     <p><strong>{{ speakerName }}</strong> {{ speakerBio }}</p>
