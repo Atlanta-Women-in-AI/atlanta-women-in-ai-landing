@@ -8,8 +8,9 @@ permalink: /workshop-you-2-0.html
 headline: "You 2.0: Visibility • Authority • Strategic Ownership"
 leadText: >-
   A live virtual workshop for women leaders ready to step into their next level
-  of visibility, authority, and strategic ownership. (3 hours | cohort-based |
-  interactive)
+  of visibility, authority, and strategic ownership. 
+
+  (3 hours | cohort-based | interactive)
 
 
   Designed for high-capacity corporate and consulting professionals, founders, and subject matter experts.
