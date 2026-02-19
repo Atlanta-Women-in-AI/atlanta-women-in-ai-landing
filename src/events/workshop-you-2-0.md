@@ -1,11 +1,11 @@
 ---
 layout: event.njk
-title: "You 2.0: Visibility • Authority • Strategic Ownership"
+title: "Step Into Your Next Level: You 2.0"
 date: 2026-03-25
 eventType: Workshop
 badge: WORKSHOP
 permalink: /workshop-you-2-0.html
-headline: What I Know Is Enough
+headline: "You 2.0: Visibility • Authority • Strategic Ownership"
 leadText: >-
   A live virtual workshop for women leaders ready to step into their next level
   of visibility, authority, and strategic ownership.
