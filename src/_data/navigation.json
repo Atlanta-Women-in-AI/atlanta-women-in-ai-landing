@@ -7,6 +7,7 @@
     { "label": "Home", "url": "#home", "homeUrl": "/" },
     { "label": "About", "url": "#about", "homeUrl": "/#about" },
     { "label": "Events", "url": "#events", "homeUrl": "/#events" },
+    { "label": "Workshops", "url": "/workshop-you-2-0.html", "homeUrl": "/workshop-you-2-0.html" },
     { "label": "Why Join", "url": "#why-join", "homeUrl": "/#why-join" },
     { "label": "Contact", "url": "/contact/", "homeUrl": "/contact/" }
   ],

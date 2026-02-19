@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("newsletter-popup.js");
   eleventyConfig.addPassthroughCopy("contact-form-handler.js");
   eleventyConfig.addPassthroughCopy("logo.png");
-  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy({"src/images": "images"});
   eleventyConfig.addPassthroughCopy("src/admin/*.yml");
 
   // Events collection - all events sorted by date
@@ -32,6 +32,24 @@ module.exports = function(eleventyConfig) {
     now.setHours(0, 0, 0, 0);
     return collectionApi.getFilteredByGlob("src/events/*.md")
       .filter(event => new Date(event.data.date) >= now)
+      .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
+  });
+
+  // Upcoming meetings - upcoming events that are NOT workshops
+  eleventyConfig.addCollection("upcomingMeetings", function(collectionApi) {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    return collectionApi.getFilteredByGlob("src/events/*.md")
+      .filter(event => new Date(event.data.date) >= now && event.data.eventType !== "Workshop")
+      .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
+  });
+
+  // Upcoming workshops - upcoming events where eventType is Workshop
+  eleventyConfig.addCollection("upcomingWorkshops", function(collectionApi) {
+    const now = new Date();
+    now.setHours(0, 0, 0, 0);
+    return collectionApi.getFilteredByGlob("src/events/*.md")
+      .filter(event => new Date(event.data.date) >= now && event.data.eventType === "Workshop")
       .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
   });
 

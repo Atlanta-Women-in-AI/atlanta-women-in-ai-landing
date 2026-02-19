@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: github
   repo: Atlanta-Women-in-AI/atlanta-women-in-ai-landing
