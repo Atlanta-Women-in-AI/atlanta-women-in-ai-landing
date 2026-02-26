@@ -4,7 +4,7 @@ title: "From Ethics to Infrastructure: How AI Governance Is Taking Shape
   Globally and Impacts Everyone"
 date: 2026-02-19
 eventType: Presentation
-badge: UPCOMING EVENT
+badge: PAST EVENT
 permalink: /event-february-2026.html
 headline: "From Ethics to Infrastructure: How AI Governance Is Taking Shape
   Globally and Impacts Everyone"
