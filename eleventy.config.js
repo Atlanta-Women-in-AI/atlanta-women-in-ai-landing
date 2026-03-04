@@ -69,7 +69,8 @@ module.exports = function(eleventyConfig) {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: 'UTC'
     };
     return d.toLocaleDateString('en-US', options);
   });
@@ -80,7 +81,8 @@ module.exports = function(eleventyConfig) {
     const options = {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: 'UTC'
     };
     return d.toLocaleDateString('en-US', options);
   });
@@ -88,19 +90,19 @@ module.exports = function(eleventyConfig) {
   // Month abbreviation (e.g., "JAN")
   eleventyConfig.addFilter("monthAbbr", (date) => {
     const d = new Date(date);
-    return d.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+    return d.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();
   });
 
   // Day number (e.g., "21")
   eleventyConfig.addFilter("dayNum", (date) => {
     const d = new Date(date);
-    return d.getDate();
+    return d.getUTCDate();
   });
 
   // Year (e.g., "2026")
   eleventyConfig.addFilter("year", (date) => {
     const d = new Date(date);
-    return d.getFullYear();
+    return d.getUTCFullYear();
   });
 
   // Convert newlines to <br> tags so CMS line breaks render on the page
