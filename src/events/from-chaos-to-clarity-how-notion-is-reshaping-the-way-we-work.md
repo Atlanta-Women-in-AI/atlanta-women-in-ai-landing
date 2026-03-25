@@ -16,16 +16,7 @@ description: In this session, Meghana Deshpande — product management leader
   bring concepts to life — and close with a look at how AI Agents are beginning
   to transform what's possible inside Notion. Whether you're a Notion newcomer
   or a power user, you'll leave with fresh ideas and practical inspiration.
-whatToExpect: |-
-  o Introduction to Notion
-  o History of Notion
-  o Evolution of Notion Workspaces
-  o Show demo workspaces
-  o Architect workspace
-  o FinTech Startup
-  o Automation demo
-  o AI Agents in Notion
-  o Q & A
+whatToExpect: ""
 speakerName: Meghana Deshpande
 speakerBio: >-
   Meghana started her career in IT more than 2 decades ago. When .NET was
@@ -49,7 +40,23 @@ speakerBio: >-
   Meghana currently works in Product Strategy while managing her consulting business
 
   where she helps SMBs with custom Notion solutions.
-agenda: []
+agenda:
+  - title:  Introduction to Notion
+    time: 6:40 PM - 6:50 PM
+  - title:  History of Notion
+    time: 6:50 PM - 7:00 PM
+  - title:  Evolution of Notion Workspaces
+    time: 7:00 PM - 7:15 PM
+  - title:  Show demo workspaces
+    bullets:
+      - o Architect workspace
+      - o FinTech Startup
+      - o Automation demo
+    time: 7:15 PM - 7:30 PM
+  - title: " AI Agents in Notion:"
+    time: 7:30 PM - 7:40 PM
+  - title:  Q & A
+    time: 7:40 PM - 7:50 PM
 time: 6:30 PM
 location: Improving
 address: 11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009
