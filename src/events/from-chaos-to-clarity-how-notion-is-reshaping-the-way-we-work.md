@@ -41,21 +41,21 @@ speakerBio: >-
   where she helps SMBs with custom Notion solutions.
 agenda:
   - title: Introduction to Notion
-    time: 6:40 PM - 6:50 PM
+    time: 6:50 PM
   - title: History of Notion
-    time: 6:50 PM - 7:00 PM
+    time: 7:00 PM
   - title: Evolution of Notion Workspaces
-    time: 7:00 PM - 7:15 PM
+    time: 7:05 PM
   - title: Show demo workspaces
     bullets:
       - o Architect workspace
       - o FinTech Startup
       - o Automation demo
-    time: 7:15 PM - 7:30 PM
+    time: 7:10 PM
   - title: "AI Agents in Notion:"
-    time: 7:30 PM - 7:40 PM
+    time: 7:20 PM
   - title: Q & A
-    time: 7:40 PM - 7:50 PM
+    time: 7:30
 time: 6:30 PM
 location: Improving
 address: 11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009
