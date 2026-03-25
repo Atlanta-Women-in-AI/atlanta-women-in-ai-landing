@@ -54,7 +54,7 @@ time: 6:30 PM
 location: Improving
 address: 11675 Rainwater Drive, Suite 100, Alpharetta, GA 30009
 ticketPrice: $10.00
-registrationLink: https://beckyberrycoach.ticketspice.com/atlanta-women- in-ai-april-2026-meeting
+registrationLink: https://beckyberrycoach.ticketspice.com/atlanta-women-in-ai-april-2026-meeting
 foundingSponsors: Becky Berry Career Coaching and Yeh & Johnson Technology Consulting
 meetingSponsor: Improving
 ---
