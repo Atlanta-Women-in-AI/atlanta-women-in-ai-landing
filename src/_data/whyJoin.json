@@ -29,19 +29,6 @@
       "buttonLink": "index.html#events"
     },
     {
-      "icon": "target",
-      "title": "Think Tank",
-      "description": "Get feedback on your AI projects",
-      "bullets": [
-        "30-min brainstorming",
-        "Reciprocal feedback",
-        "Project acceleration",
-        "Peer expertise"
-      ],
-      "buttonText": "Join Session",
-      "buttonLink": "contact.html"
-    },
-    {
       "icon": "bell",
       "title": "One Shots",
       "description": "Quarterly networking events",
