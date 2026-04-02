@@ -17,20 +17,24 @@
       "name": "WhatsApp",
       "url": "https://chat.whatsapp.com/L1mKOvGOpjdCDaNP8WdmkV",
       "icon": "whatsapp"
-    },
-    {
-      "name": "Eventbrite",
-      "url": "https://www.eventbrite.com/o/atlanta-women-in-ai-95498995498",
-      "icon": "eventbrite"
     }
   ],
   "donations": {
     "title": "Support Our Mission",
     "subtitle": "Help us empower women in AI",
     "amounts": [
-      { "amount": "$25", "url": "https://buy.stripe.com/6oU7sDexGgP58gjd9AbII01" },
-      { "amount": "$50", "url": "https://buy.stripe.com/bJe6oz89i0Q7aor5H8bII02" },
-      { "amount": "$100", "url": "https://buy.stripe.com/9B65kv2OYdCTdAD6LcbII03" }
+      {
+        "amount": "$25",
+        "url": "https://buy.stripe.com/6oU7sDexGgP58gjd9AbII01"
+      },
+      {
+        "amount": "$50",
+        "url": "https://buy.stripe.com/bJe6oz89i0Q7aor5H8bII02"
+      },
+      {
+        "amount": "$100",
+        "url": "https://buy.stripe.com/9B65kv2OYdCTdAD6LcbII03"
+      }
     ]
   },
   "mailchimp": {
