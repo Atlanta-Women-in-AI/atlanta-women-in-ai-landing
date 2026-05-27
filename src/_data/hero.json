@@ -22,6 +22,10 @@
   },
   "carouselImages": [
     {
+      "src": "/images/awiai-april-2026-group-photo-cropped-800x336.jpg",
+      "alt": "Atlanta Women in AI Event Group Photo"
+    },
+    {
       "src": "/images/january-picture.jpeg",
       "alt": "Jan 2026 meeting"
     },
@@ -52,10 +56,6 @@
     {
       "src": "/images/IMG_2435.jpeg",
       "alt": "Atlanta Women in AI Event"
-    },
-    {
-      "src": "/images/awiai-april-2026-group-photo-cropped-800x336.jpg",
-      "alt": "Atlanta Women in AI Event Group Photo"
     }
   ]
 }
