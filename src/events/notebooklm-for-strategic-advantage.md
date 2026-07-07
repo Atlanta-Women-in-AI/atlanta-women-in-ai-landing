@@ -3,7 +3,7 @@ layout: event.njk
 title: NotebookLM for Strategic Advantage
 date: 2026-06-18
 eventType: Meeting
-badge: UPCOMING EVENT
+badge: PAST EVENT
 permalink: /event-june-2026.html
 headline: Build a mind that moves.
 leadText: >-
