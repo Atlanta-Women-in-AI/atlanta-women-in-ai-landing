@@ -3,7 +3,7 @@ layout: event.njk
 title: "Beyond the Chat Window: What Claude Cowork Actually Does"
 date: 2026-08-19
 eventType: Monthly Meeting
-badge: UPCOMING EVENT
+badge: PAST EVENT
 permalink: /event-august-2026.html
 headline: "What to Automate and What to Skip: A Practical Cowork Playbook"
 leadText: >-
