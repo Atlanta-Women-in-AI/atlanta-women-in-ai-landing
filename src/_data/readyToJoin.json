@@ -3,20 +3,11 @@
   "sectionSubtitle": "Choose your path to get involved",
   "cards": [
     {
-      "icon": "chat",
-      "title": "WhatsApp Community",
-      "description": "Join 50+ members in daily discussions, resource sharing, and real-time support.",
-      "buttonText": "Join WhatsApp",
-      "buttonLink": "https://chat.whatsapp.com/L1mKOvGOpjdCDaNP8WdmkV",
-      "featured": false,
-      "type": "link"
-    },
-    {
       "icon": "calendar",
       "title": "Attend Next Meeting",
       "description": "Experience our community firsthand at our next meeting in Alpharetta.",
       "buttonText": "Register Now",
-      "buttonLink": "https://beckyberrycoach.ticketspice.com/atlanta-women-in-ai-january-2026-meeting",
+      "buttonLink": "https://beckyberrycoach.ticketspice.com/atlanta-women-in-ai-september-2026-meeting",
       "featured": true,
       "type": "link"
     },
