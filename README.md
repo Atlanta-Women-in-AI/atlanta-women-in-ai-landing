@@ -26,17 +26,16 @@ This is a complete modern redesign of the Atlanta Women in AI website featuring:
 - Floating AI-themed cards with continuous animations
 - Interactive value proposition cards
 
-### Why Join Us (Initiatives)
-- 3D flip cards showcasing all 6 initiatives
-- Content merged from original Initiatives page
-- Touch-friendly for mobile devices
-- Hover effects with smooth transitions
-
 ### Events Section
 - Featured event card with real-time countdown
 - Upcoming events calendar
 - Quick registration CTAs
 - Glassmorphism styling
+
+### Ready to Join Section
+- Centered cards for the main engagement pathways
+- Monthly Meetings highlighted as the featured registration action
+- Newsletter signup and community links
 
 ### Additional Features
 - Auto-rotating testimonials

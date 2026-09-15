@@ -19,29 +19,18 @@
 - **Core values**: Cards with hover effects
 - **Mission visualization**: Interactive timeline or process flow
 
-### 3. Why Join Us (Merged Initiatives Content)
-- **Interactive card grid** showcasing benefits:
-  - Monthly Meetings
-  - Masterclasses
-  - Think Tank Sessions
-  - Networking Opportunities
-  - 411 Connect Sessions
-  - Mastermind Groups
-- **Each card**: Expandable with micro-interactions
-- **Visual hierarchy**: Most popular initiatives highlighted
-
-### 4. Upcoming Events
+### 3. Upcoming Events
 - **Event carousel** with glassmorphism cards
 - **Quick registration**: Inline forms
 - **Calendar integration**: Visual monthly view
 - **Event countdown timer** for next meeting
 
-### 5. Success Stories / Testimonials
+### 4. Success Stories / Testimonials
 - **Rotating testimonials** with member photos
 - **Achievement highlights**: Member wins
 - **Before/after career journeys**
 
-### 6. Get Involved (CTA Section)
+### 5. Get Involved (CTA Section)
 - **Three pathways**:
   1. Join WhatsApp Community
   2. Attend Next Meeting

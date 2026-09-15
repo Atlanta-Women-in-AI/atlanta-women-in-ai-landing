@@ -132,28 +132,6 @@ collections:
               - { label: "Image", name: "src", widget: "image", hint: "Upload or select an image" }
               - { label: "Alt Text", name: "alt", widget: "string", hint: "Description for accessibility. Example: 'Atlanta Women in AI Event'" }
 
-      - name: "whyJoin"
-        label: "Why Join Us Section"
-        file: "src/_data/whyJoin.json"
-        fields:
-          - { label: "Section Title", name: "sectionTitle", widget: "string", hint: "Example: 'Why Join Us'" }
-          - { label: "Section Subtitle", name: "sectionSubtitle", widget: "string", hint: "Example: 'Discover the benefits of being part of our thriving community'" }
-          - label: "Cards"
-            name: "cards"
-            widget: "list"
-            hint: "The benefit cards displayed in this section"
-            fields:
-              - { label: "Icon", name: "icon", widget: "select", options: ["people", "tools", "target", "bell", "compass", "lightbulb", "heart", "star"], hint: "Choose an icon for this card" }
-              - { label: "Title", name: "title", widget: "string", hint: "Example: 'Monthly Meetings' or 'Workshops'" }
-              - { label: "Description", name: "description", widget: "string", hint: "Example: 'Connect in-person every 3rd Wednesday'" }
-              - label: "Bullet Points"
-                name: "bullets"
-                widget: "list"
-                hint: "List of benefits (4 recommended)"
-                field: { label: "Bullet", name: "bullet", widget: "string" }
-              - { label: "Button Text", name: "buttonText", widget: "string", hint: "Example: 'Register Now' or 'View Events'" }
-              - { label: "Button Link", name: "buttonLink", widget: "string", hint: "URL or page link. Example: 'contact.html' or 'https://eventbrite.com/...'" }
-
       - name: "readyToJoin"
         label: "Ready to Join Section"
         file: "src/_data/readyToJoin.json"
@@ -163,11 +141,11 @@ collections:
           - label: "Cards"
             name: "cards"
             widget: "list"
-            hint: "The join option cards (4 recommended)"
+            hint: "The join option cards (3 recommended)"
             fields:
               - { label: "Icon", name: "icon", widget: "select", options: ["chat", "calendar", "email", "people-plus", "star", "heart", "link"], hint: "Choose an icon" }
-              - { label: "Title", name: "title", widget: "string", hint: "Example: 'WhatsApp Community' or 'Attend Next Meeting'" }
-              - { label: "Description", name: "description", widget: "string", hint: "Example: 'Join 50+ members in daily discussions, resource sharing, and real-time support.'" }
+              - { label: "Title", name: "title", widget: "string", hint: "Example: 'WhatsApp Community', 'Monthly Meetings', or 'Newsletter'" }
+              - { label: "Description", name: "description", widget: "string", hint: "Example: 'Join 50+ members in daily discussions, resource sharing, and real-time support.' or 'Get AI insights and community updates delivered to your inbox.'" }
               - { label: "Button Text", name: "buttonText", widget: "string", hint: "Example: 'Join WhatsApp' or 'Register Now'" }
               - { label: "Button Link", name: "buttonLink", widget: "string", required: false, hint: "URL for the button. Leave empty for Newsletter card." }
               - { label: "Featured?", name: "featured", widget: "boolean", default: false, hint: "Check to highlight this card (glowing button)" }
