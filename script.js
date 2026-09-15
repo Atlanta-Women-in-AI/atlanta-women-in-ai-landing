@@ -192,11 +192,8 @@ function initScrollAnimations() {
     }, observerOptions);
 
     // Observe elements with staggered delay
-    document.querySelectorAll('.value-card, .initiative-card, .join-card').forEach((el, index) => {
-        // Cap max delay and reduce stagger for initiative cards
-        const section = el.closest('section');
-        const isWhyJoin = section && section.id === 'why-join';
-        el.dataset.delay = isWhyJoin ? Math.min(index * 30, 150) : Math.min(index * 50, 300);
+    document.querySelectorAll('.value-card, .join-card').forEach((el, index) => {
+        el.dataset.delay = Math.min(index * 50, 300);
         observer.observe(el);
     });
 }
@@ -433,18 +430,6 @@ style.textContent = `
             opacity: 1;
             transform: translateY(0) translateZ(0);
         }
-    }
-    
-    /* Optimize initiative cards animation */
-    #why-join .initiative-card {
-        opacity: 0;
-        transform: translateY(20px) translateZ(0);
-    }
-    
-    #why-join .initiative-card.animate-in {
-        opacity: 1;
-        transform: translateY(0) translateZ(0);
-        animation: fadeInQuick 0.4s ease forwards;
     }
     
     @keyframes fadeInQuick {
