@@ -3,7 +3,7 @@ layout: event.njk
 title: "The AI Growth Engine: A 30-minute Playbook to Turn Leads Into Revenue"
 date: 2026-09-17
 eventType: Monthly Meeting
-badge: UPCOMING EVENT
+badge: PAST EVENT
 permalink: /event-september-2026.html
 headline: Getting Leads Was Never the Hard Part!
 leadText: Turning leads into actual paying customers, aka revenue, is where most
