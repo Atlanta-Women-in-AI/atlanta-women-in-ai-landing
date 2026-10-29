@@ -7,7 +7,7 @@ eventType: Monthly Meeting
 badge: UPCOMING EVENT
 permalink: /event-november-2026.html
 headline: Share what you know. Get paid for it.
-leadText: Hands-on session on building the workshops your people want.
+leadText: Build the workshops your people need and want!
 shortDescription: Share what you know. Get paid for it.
 description: >-
   Everyone knows something that somebody else needs to know.
