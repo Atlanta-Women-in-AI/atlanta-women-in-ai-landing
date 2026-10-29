@@ -10,7 +10,7 @@ headline: Share what you know. Get paid for it.
 leadText: Build the workshops your people need and want!
 shortDescription: Share what you know. Get paid for it.
 description: >-
-  Everyone knows something that somebody else needs to know.
+  We all know something that somebody else needs to know.
 
 
   In this interactive session, you'll learn how to use AI to turn what you already know into engaging workshops, learning experiences, and income opportunities. Through a live demo and hands-on activity, you'll build something in real time using simple, reusable prompts.
