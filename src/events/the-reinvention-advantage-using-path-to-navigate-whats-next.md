@@ -3,7 +3,7 @@ layout: event.njk
 title: "The Reinvention Advantage: Using PATH to Navigate What's Next"
 date: 2026-10-21
 eventType: Monthly Meeting
-badge: UPCOMING EVENT
+badge: PAST EVENT
 permalink: /event-october-2026.html
 headline: In a world where change is continuous, the ability to reinvent may be
   one of our most important advantages.
